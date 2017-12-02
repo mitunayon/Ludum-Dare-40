@@ -1,1 +1,2 @@
-# Ludum-Dare-40
+# Ludum-D
+hi kenny i am chanigng the readme
