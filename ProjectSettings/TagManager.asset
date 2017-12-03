@@ -6,6 +6,8 @@ TagManager:
   tags:
   - pickup
   - ingredient
+  - container
+  - serving plate
   layers:
   - Default
   - TransparentFX

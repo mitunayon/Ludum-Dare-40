@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
 
     public string gameState = "live";
+    public GameObject soupObj;
 
 	// Use this for initialization
 	void Start () {
