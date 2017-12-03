@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f451b497cc888cd41a825824a7e4bbf6
-timeCreated: 1512257679
+guid: d68b7634d93b1154897dc8ba134f6a1c
+timeCreated: 1512265554
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,18 +9,23 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube
+    4300000: Kitchen Sink
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Cheese
-    second: {fileID: 2100000, guid: fb4cf7d3146c61142bf9d43e90e8c2ef, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: f2be196ea10043d42ac9c31611ebb838, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: WhiteCheese
-    second: {fileID: 2100000, guid: aefe222387e52e848b2fd7995b228225, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: b8bb906272042574ab69c8965009c99f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 201a1bcf9ca579047a69ab11efb446e1, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
