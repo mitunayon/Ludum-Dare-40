@@ -6,7 +6,8 @@ using UnityEngine.AI;
 public class CustomerController : MonoBehaviour {
     private bool isHungry = true;
     private NavMeshAgent agent;
-    private Vector3 target;
+    [SerializeField]
+    private Transform target;
 	// Use this for initialization
 	void Start () {
         agent = GetComponent<NavMeshAgent>();
@@ -16,6 +17,6 @@ public class CustomerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        agent.SetDestination(target);
+        agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
     }
 }
