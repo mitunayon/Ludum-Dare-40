@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PickupController : MonoBehaviour {
+    private GameObject player;
+    private Transform cam;
 	[SerializeField]
 	private Slider chargeUI;
 	private float startTime;
@@ -16,9 +18,17 @@ public class PickupController : MonoBehaviour {
 	private bool pickedup;
 	[SerializeField]
 	private float throwStrength;
-	private float chargeUpTime; 
+	private float chargeUpTime;
+    [SerializeField]
+    private float rotationSpeed = 50f; //how fast the object should rotate
 
-	void Update(){
+
+    private void Start()
+    {
+        cam = Camera.main.transform;
+    }
+
+    void Update(){
 		if (pickedup_object != null) {
 			if (pickedup) {
 				shootItem (pickedup_objectRb);
@@ -28,10 +38,11 @@ public class PickupController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate() {
 		pickingUp ();
-	}
+        
+    }
 
-    
-	public void pickingUp(){
+
+    private void pickingUp(){
         //if left click with out holding anything
 		if (Input.GetMouseButtonDown(0) && !pickedup){
             if (Physics.Raycast(transform.position, transform.forward, out hit, 3.5f)){
@@ -42,16 +53,18 @@ public class PickupController : MonoBehaviour {
                 }
             }
 		}
-      
+       
 
-        //if hand is full
+        //the raycast detects an actual object
         if (pickedup_object != null) {
             if (pickedup) {
 				pickedup_objectRb.useGravity = false;
 				pickedup_objectRb.angularDrag = 5f;
 				pickedup_object.transform.position = Vector3.Lerp (pickedup_object.transform.position, transform.position + transform.forward * 2, Time.deltaTime * smooth);
-				pickedup_object.transform.LookAt(transform);
-			}
+                //pickedup_object.transform.LookAt(transform);
+                
+                    rotateObject(pickedup_object);
+            }
 
 			if (pickedup == false && pickedup_objectRb != null) {
 				pickedup_objectRb.useGravity = true;
@@ -61,7 +74,7 @@ public class PickupController : MonoBehaviour {
 		}
 	}
 
-	void shootItem(Rigidbody pickupRb){
+	private void shootItem(Rigidbody pickupRb){
 		if (Input.GetMouseButtonDown(1)) {
 			startTime = Time.fixedTime;
 		}
@@ -80,5 +93,19 @@ public class PickupController : MonoBehaviour {
 			startTime = 0;
 		}
 	}
+
+    private void rotateObject(GameObject pickup){
+        //enable rotation of the object
+        if (Input.GetMouseButton(2))
+        {
+            pickup.transform.Rotate(cam.up, -Mathf.Deg2Rad * Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed ,Space.World);
+            pickup.transform.Rotate(cam.right, Mathf.Deg2Rad * Input.GetAxis("Mouse Y") * Time.deltaTime * rotationSpeed, Space.World);
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            pickup.transform.Rotate(cam.forward, -Mathf.Deg2Rad * Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed, Space.World);
+        }
+    }
+
 
 }

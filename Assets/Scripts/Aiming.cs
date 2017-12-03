@@ -37,27 +37,31 @@ public class Aiming : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-		if (gameCtrl.gameState == "live")
+        //stops turning when rotation of objects
+        if (!Input.GetMouseButton(2) && !Input.GetKey(KeyCode.Q))
         {
-            x = Input.GetAxis("Mouse X");
-            y = Input.GetAxis("Mouse Y");
-
-            if (RotAxisXY == RotAxis.X)
+            if (gameCtrl.gameState == "live")
             {
-                RotX += x * sensitivity * Time.deltaTime;
-                RotX = ClampAngle(RotX, minX, maxX);
-                OrigRotation = xQuat = Quaternion.AngleAxis(RotX, Vector3.up);
-                transform.localRotation = OrigRotation * xQuat;
-            }
+                x = Input.GetAxis("Mouse X");
+                y = Input.GetAxis("Mouse Y");
 
-            if (RotAxisXY == RotAxis.Y)
-            {
-                RotY -= y * sensitivity * Time.deltaTime;
-                RotY = ClampAngle(RotY, minY, maxY);
-                OrigRotation = yQuat = Quaternion.AngleAxis(RotY, Vector3.right);
-                transform.localRotation = OrigRotation * yQuat;
-            }
-        }  
+                if (RotAxisXY == RotAxis.X)
+                {
+                    RotX += x * sensitivity * Time.deltaTime;
+                    RotX = ClampAngle(RotX, minX, maxX);
+                    OrigRotation = xQuat = Quaternion.AngleAxis(RotX, Vector3.up);
+                    transform.localRotation = OrigRotation * xQuat;
+                }
+
+                if (RotAxisXY == RotAxis.Y)
+                {
+                    RotY -= y * sensitivity * Time.deltaTime;
+                    RotY = ClampAngle(RotY, minY, maxY);
+                    OrigRotation = yQuat = Quaternion.AngleAxis(RotY, Vector3.right);
+                    transform.localRotation = OrigRotation * yQuat;
+                }
+            }   
+        }
     }
 
     public static float ClampAngle(float Angle, float Min, float Max)
