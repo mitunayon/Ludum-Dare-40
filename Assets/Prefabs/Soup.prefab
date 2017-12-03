@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4409351035087362}
   - component: {fileID: 33281771552759982}
   - component: {fileID: 23841081783697920}
-  - component: {fileID: 95287309528423884}
   m_Layer: 0
   m_Name: Soup
   m_TagString: pickup
@@ -85,20 +84,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1898971485378780}
   m_Mesh: {fileID: 4300000, guid: f375841ead6661e4481103f516474ca4, type: 3}
---- !u!95 &95287309528423884
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1898971485378780}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: f375841ead6661e4481103f516474ca4, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
