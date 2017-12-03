@@ -23,8 +23,9 @@ public class CustomerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
-        if (!isSeated) {
+
+        if (!isSeated)
+        {
             target = GameObject.FindWithTag("empty seat");
             if (target == null)
             {
@@ -32,8 +33,12 @@ public class CustomerController : MonoBehaviour {
             }
             agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
         }
+       
+        
+
         if (isHungry) {
             renderer.material.color = Color.red;
+            
         }
         else{
             renderer.material.color = Color.green;
@@ -60,15 +65,15 @@ public class CustomerController : MonoBehaviour {
             //restarts movement
             Destroy(other.gameObject);
             target.tag = "empty seat";
-            isSeated = false;
-            agent.isStopped = false;
             agent.enabled = true;
+            agent.isStopped = false;
             collider.isTrigger = false;
             rb.isKinematic = false;
             isHungry = false;
             //customer leaves
             target = door;
-
+            agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
+            Debug.Log(target);
         }
         
     }

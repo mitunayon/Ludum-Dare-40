@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  door: {fileID: 0}
 --- !u!136 &136380023936108760
 CapsuleCollider:
   m_ObjectHideFlags: 1

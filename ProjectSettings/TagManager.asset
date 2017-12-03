@@ -10,6 +10,7 @@ TagManager:
   - serving plate
   - empty seat
   - seat
+  - finished food
   layers:
   - Default
   - TransparentFX
