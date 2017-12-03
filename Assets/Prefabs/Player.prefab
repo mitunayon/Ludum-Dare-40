@@ -72,8 +72,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1039328147892430}
-  m_LocalRotation: {x: -0, y: 0.92989117, z: -0, w: 0.3678349}
-  m_LocalPosition: {x: 0.90941, y: 2.86, z: -20.857494}
+  m_LocalRotation: {x: -0, y: 0.39773443, z: -0, w: 0.9175006}
+  m_LocalPosition: {x: 1.3037585, y: 1.3, z: -0.5707388}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4290516199400562}
@@ -237,7 +237,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chargeUI: {fileID: 0}
+  pickedup_object: {fileID: 0}
+  pickedup_objectRb: {fileID: 0}
   smooth: 15
+  pickedup: 0
   throwStrength: 2000
   rotationSpeed: 3000
 --- !u!114 &114812368778696726

@@ -52,3 +52,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: live
+  soupObj: {fileID: 1898971485378780, guid: 8af281491294e0247ba82e2bbbba0b2c, type: 2}
