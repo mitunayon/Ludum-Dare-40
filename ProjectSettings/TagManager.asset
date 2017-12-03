@@ -8,6 +8,8 @@ TagManager:
   - ingredient
   - container
   - serving plate
+  - empty seat
+  - seat
   layers:
   - Default
   - TransparentFX
