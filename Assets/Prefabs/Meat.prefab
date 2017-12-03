@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4296608704204194}
   - component: {fileID: 54138554407612074}
   - component: {fileID: 65204215924698974}
+  - component: {fileID: 114195466637256248}
   m_Layer: 0
-  m_Name: moo
-  m_TagString: pickup
+  m_Name: Meat
+  m_TagString: ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,3 +214,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.9077961, y: 1.5776765, z: 1.5132872}
   m_Center: {x: -0.0755326, y: 0.28883862, z: 0.25664473}
+--- !u!114 &114195466637256248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1400218533703692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b02fc2924a9d042be0c9efa80c418f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progress: 0
+  type: raw_ingredient
+  salty: 0
+  sweet: 0
+  sour: 0
+  spicy: 0

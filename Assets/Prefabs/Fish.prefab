@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 23435884725357244}
   - component: {fileID: 54316634955696336}
   - component: {fileID: 64849197949339014}
+  - component: {fileID: 114093765088454130}
   m_Layer: 0
   m_Name: Fish
-  m_TagString: pickup
+  m_TagString: ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1766328103751568}
   m_LocalRotation: {x: -0.508727, y: -0.4911181, z: 0.49111798, w: 0.50872695}
-  m_LocalPosition: {x: 10.23, y: 1.43, z: -15.027728}
-  m_LocalScale: {x: 0.1189652, y: 0.118965186, z: 0.1189652}
+  m_LocalPosition: {x: 4.5516562, y: 0.55, z: -4.298051}
+  m_LocalScale: {x: 0.06871899, y: 0.068718985, z: 0.06871899}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -115,3 +116,20 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: ad628c27d927dbc4b8a75a3c94a61e93, type: 3}
+--- !u!114 &114093765088454130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1766328103751568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b02fc2924a9d042be0c9efa80c418f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progress: 0
+  type: raw_ingredient
+  salty: 0
+  sweet: 0
+  sour: 0
+  spicy: 0

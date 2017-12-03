@@ -5,6 +5,9 @@ using System.Collections.Generic;
 public class FoodController : MonoBehaviour
 {
     public float progress = 0f;
+    
+
+    public string type = "cheese";
 
     public float salty = 0f;
     public float sweet = 0f;

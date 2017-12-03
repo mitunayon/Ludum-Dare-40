@@ -11,11 +11,11 @@ public class PickupController : MonoBehaviour {
 	private float startTime;
 	private float durationTime;
 	private RaycastHit hit;
-	private GameObject pickedup_object;
-	private Rigidbody pickedup_objectRb;
+	public GameObject pickedup_object;
+	public Rigidbody pickedup_objectRb;
 	[SerializeField]
 	private float smooth;
-	private bool pickedup;
+	public bool pickedup;
 	[SerializeField]
 	private float throwStrength;
 	private float chargeUpTime;
@@ -48,7 +48,7 @@ public class PickupController : MonoBehaviour {
             if (Physics.Raycast(transform.position, transform.forward, out hit, 3.5f)){
                 pickedup_object = hit.collider.gameObject;
                 pickedup_objectRb = hit.rigidbody;
-                if (pickedup_object.tag == "pickup"){
+                if (pickedup_object.tag == "pickup" || pickedup_object.tag == "ingredient" || pickedup_object.tag == "container"){
                     pickedup = !pickedup;
                 }
             }
