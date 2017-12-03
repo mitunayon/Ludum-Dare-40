@@ -19,11 +19,13 @@ public class CustomerController : MonoBehaviour {
         renderer = GetComponent<Renderer>();
         collider = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
+        agent.enabled = true;
+        target = GameObject.FindWithTag("empty seat");
+        agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
     }
 	
 	// Update is called once per frame
 	void Update () {
-
         if (!isSeated)
         {
             target = GameObject.FindWithTag("empty seat");
@@ -71,9 +73,8 @@ public class CustomerController : MonoBehaviour {
             rb.isKinematic = false;
             isHungry = false;
             //customer leaves
-            target = GameObject.Find("Wall (28)");
+            target = GameObject.Find("Customer Spawn");
             agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
-            Debug.Log(target);
         }
         
     }
