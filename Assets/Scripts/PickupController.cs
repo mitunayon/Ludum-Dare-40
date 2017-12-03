@@ -24,7 +24,6 @@ public class PickupController : MonoBehaviour {
 				shootItem (pickedup_objectRb);
 			}
 		}
-
 	}
 	// Update is called once per frame
 	void FixedUpdate() {
@@ -33,22 +32,27 @@ public class PickupController : MonoBehaviour {
 
     
 	public void pickingUp(){
-		if (Input.GetMouseButtonDown(0)){
-			if (Physics.Raycast(transform.position, transform.forward,out hit, 3.5f)){
-				pickedup_object = hit.collider.gameObject;
-				pickedup_objectRb = hit.rigidbody;
-				if(pickedup_object.tag == "pickup" || pickedup_object.tag == "key"){
-					pickedup = !pickedup;
-				}
-			}
+        //if left click with out holding anything
+		if (Input.GetMouseButtonDown(0) && !pickedup){
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 3.5f)){
+                pickedup_object = hit.collider.gameObject;
+                pickedup_objectRb = hit.rigidbody;
+                if (pickedup_object.tag == "pickup"){
+                    pickedup = !pickedup;
+                }
+            }
 		}
-		if (pickedup_object != null) {
-			if (pickedup) {
+      
+
+        //if hand is full
+        if (pickedup_object != null) {
+            if (pickedup) {
 				pickedup_objectRb.useGravity = false;
 				pickedup_objectRb.angularDrag = 5f;
 				pickedup_object.transform.position = Vector3.Lerp (pickedup_object.transform.position, transform.position + transform.forward * 2, Time.deltaTime * smooth);
 				pickedup_object.transform.LookAt(transform);
 			}
+
 			if (pickedup == false && pickedup_objectRb != null) {
 				pickedup_objectRb.useGravity = true;
 				pickedup_objectRb.angularDrag = 0.05f;
@@ -60,8 +64,8 @@ public class PickupController : MonoBehaviour {
 	void shootItem(Rigidbody pickupRb){
 		if (Input.GetMouseButtonDown(1)) {
 			startTime = Time.fixedTime;
-
 		}
+
 		if (Input.GetMouseButton(1)) {
 			chargeUpTime = Mathf.Clamp(Time.fixedTime - startTime,0,1);
 			//chargeUI.value = chargeUpTime;
