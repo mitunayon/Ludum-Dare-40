@@ -31,6 +31,7 @@ public class PickupController : MonoBehaviour {
 		pickingUp ();
 	}
 
+    
 	public void pickingUp(){
 		if (Input.GetMouseButtonDown(0)){
 			if (Physics.Raycast(transform.position, transform.forward,out hit, 3.5f)){
@@ -55,6 +56,7 @@ public class PickupController : MonoBehaviour {
 			}
 		}
 	}
+
 	void shootItem(Rigidbody pickupRb){
 		if (Input.GetMouseButtonDown(1)) {
 			startTime = Time.fixedTime;
@@ -62,10 +64,9 @@ public class PickupController : MonoBehaviour {
 		}
 		if (Input.GetMouseButton(1)) {
 			chargeUpTime = Mathf.Clamp(Time.fixedTime - startTime,0,1);
-			chargeUI.value = chargeUpTime;
+			//chargeUI.value = chargeUpTime;
 		}
 		if(Input.GetMouseButtonUp(1)){
-			Debug.Log("this occurs");
 			durationTime = Mathf.Clamp(Time.fixedTime - startTime,0,1);
 			pickedup = false;
 			pickupRb.useGravity = true;
@@ -75,13 +76,5 @@ public class PickupController : MonoBehaviour {
 			startTime = 0;
 		}
 	}
-	void stopRotation(){
-		if (Input.GetKeyDown(KeyCode.E)){
-			pickedup_object.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-			pickedup_objectRb.freezeRotation = true;
-		}
-		if(Input.GetKeyUp(KeyCode.E)){
-			pickedup_objectRb.freezeRotation = false;
-		}
-	}
+
 }
