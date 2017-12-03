@@ -8,10 +8,16 @@ public class CookingContainer : MonoBehaviour {
 
     public List<string> ingredients = new List<string>();
     private PickupController pickupCtrl;
+    GameController gameCtrl;
+    
+    public bool isCooked = false;
 
-	// Use this for initialization
-	void Start () {
+    public float cookRate = 0.5f;
+
+    // Use this for initialization
+    void Start () {
         pickupCtrl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PickupController>();
+        gameCtrl = GameObject.Find("GameController").GetComponent<GameController>();
     }
 	
 	// Update is called once per frame
@@ -21,27 +27,65 @@ public class CookingContainer : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "ingredient")
+        
+
+        switch (collision.transform.tag)
         {
-            print("Added " + collision.collider.name.ToString());
-            FoodController foodCtrl = collision.collider.GetComponent<FoodController>();
+            case "ingredient":
+                print("Added " + collision.collider.name.ToString());
+                FoodController foodCtrl = collision.collider.GetComponent<FoodController>();
 
-            ingredients.Add(collision.collider.name.ToString());
+                ingredients.Add(collision.collider.name.ToString());
 
-            if (pickupCtrl.pickedup_object.tag == "ingredient")
+                if (pickupCtrl.pickedup_object.tag == "ingredient")
+                {
+                    pickupCtrl.pickedup_object = null;
+                    pickupCtrl.pickedup_objectRb = null;
+                    pickupCtrl.pickedup = false;
+                    /*
+                    // set parent
+                    foodCtrl.transform.SetParent(gameObject.transform);
+                    collision
+                    */
+                }
+                Destroy(collision.transform.gameObject);
+                break;
+
+            case "serving plate":
+                print("served");
+                if (isCooked && ingredients.Count > 0)
+                {
+
+                    Instantiate(gameCtrl.soupObj, transform.position, transform.rotation);
+                    ClearIngredients();
+                }
+                break;
+            
+        }
+
+    }
+    void ClearIngredients()
+    {
+        ingredients.Clear();
+        progress = 0f;
+        isCooked = false;
+
+    }
+    public void AddCookingProgress(float cookRate)
+    {
+        if (ingredients.Count > 0)
+        {
+            if (isCooked == false)
             {
-                pickupCtrl.pickedup_object = null;
-                pickupCtrl.pickedup_objectRb = null;
-                pickupCtrl.pickedup = false;
-                // set parent
-                foodCtrl.transform.SetParent(gameObject.transform);
-                collision.rigidbody.isKinematic = false;
+                progress += cookRate;
             }
 
-            //Destroy(collision.transform.gameObject);
-            
+            if (progress >= 100f)
+            {
+                isCooked = true;
+
+            }
         }
         
     }
-    
 }

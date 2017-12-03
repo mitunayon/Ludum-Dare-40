@@ -48,7 +48,7 @@ public class PickupController : MonoBehaviour {
             if (Physics.Raycast(transform.position, transform.forward, out hit, 3.5f)){
                 pickedup_object = hit.collider.gameObject;
                 pickedup_objectRb = hit.rigidbody;
-                if (pickedup_object.tag == "pickup" || pickedup_object.tag == "ingredient" || pickedup_object.tag == "container"){
+                if (pickedup_object.tag == "pickup" || pickedup_object.tag == "ingredient" || pickedup_object.tag == "container" || pickedup_object.tag == "serving plate"){
                     pickedup = !pickedup;
                 }
             }

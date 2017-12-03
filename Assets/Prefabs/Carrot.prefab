@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 23305674459993470}
   - component: {fileID: 54529717777499354}
   - component: {fileID: 64898492240727864}
+  - component: {fileID: 114135289783299882}
   m_Layer: 0
   m_Name: Carrot
-  m_TagString: pickup
+  m_TagString: ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,3 +115,20 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 81286edc4f494044fa0cdd7193fce908, type: 3}
+--- !u!114 &114135289783299882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010495391756072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b02fc2924a9d042be0c9efa80c418f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progress: 0
+  type: cheese
+  salty: 0
+  sweet: 0
+  sour: 0
+  spicy: 0
