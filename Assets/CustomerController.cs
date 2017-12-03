@@ -12,7 +12,7 @@ public class CustomerController : MonoBehaviour {
     private Collider collider;
     private bool isSeated = false;
     private Rigidbody rb;
-    public GameObject door; 
+    private GameObject door; 
     // Use this for initialization
     void Start () {
         agent = GetComponent<NavMeshAgent>();
@@ -61,7 +61,7 @@ public class CustomerController : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other){
-        if (other.gameObject.tag == "finished food") {
+        if (other.gameObject.tag == "finished food" && isSeated) {
             //restarts movement
             Destroy(other.gameObject);
             target.tag = "empty seat";
@@ -71,7 +71,7 @@ public class CustomerController : MonoBehaviour {
             rb.isKinematic = false;
             isHungry = false;
             //customer leaves
-            target = door;
+            target = GameObject.Find("Wall (28)");
             agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
             Debug.Log(target);
         }
