@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4524139552224288}
   - component: {fileID: 33852665893918272}
   - component: {fileID: 23935250625935576}
-  - component: {fileID: 65297317401196716}
+  - component: {fileID: 65431179896006740}
   m_Layer: 0
   m_Name: kitchen sink
   m_TagString: Untagged
@@ -35,13 +35,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1555880037851054}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 7.5048, y: 0.54574, z: -9.4694}
-  m_LocalScale: {x: -52.058506, y: -52.058525, z: -52.058525}
+  m_LocalRotation: {x: -0.00000014575674, y: -0.7071068, z: 0.70710677, w: -0.00000011920929}
+  m_LocalPosition: {x: -19.281, y: 2.3684, z: -0.14744}
+  m_LocalScale: {x: 0.54688895, y: 0.5578909, z: 0.54696554}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 179.99998}
 --- !u!23 &23935250625935576
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -56,9 +56,9 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: f2be196ea10043d42ac9c31611ebb838, type: 2}
-  - {fileID: 2100000, guid: 201a1bcf9ca579047a69ab11efb446e1, type: 2}
-  - {fileID: 2100000, guid: b8bb906272042574ab69c8965009c99f, type: 2}
+  - {fileID: 2100000, guid: d50682cd34bdfbe408762c9e24c80110, type: 2}
+  - {fileID: 2100000, guid: 8feeafe5146705c4c91729fa0260d033, type: 2}
+  - {fileID: 2100000, guid: 09ac926d5149d0c4f8bb3ad585c22377, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,8 +84,8 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1555880037851054}
-  m_Mesh: {fileID: 4300000, guid: d68b7634d93b1154897dc8ba134f6a1c, type: 3}
---- !u!65 &65297317401196716
+  m_Mesh: {fileID: 4300000, guid: c8685639844b41348ac2385ad9269984, type: 3}
+--- !u!65 &65431179896006740
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -95,5 +95,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.021073816, y: 0.022142138, z: 0.02154919}
-  m_Center: {x: -0.0005369277, y: 0.00004337317, z: -0.00077459833}
+  m_Size: {x: 2.107382, y: 2.214214, z: 3.0649107}
+  m_Center: {x: -0.053693004, y: 0.0043370114, z: -0.532455}
