@@ -22,9 +22,11 @@ GameObject:
   - component: {fileID: 33651960043990978}
   - component: {fileID: 23926331387347756}
   - component: {fileID: 54739109640348630}
+  - component: {fileID: 64785655434645338}
+  - component: {fileID: 114485835488747316}
   m_Layer: 0
   m_Name: Cheese
-  m_TagString: pickup
+  m_TagString: ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1799772066054846}
   m_LocalRotation: {x: -0.00000003774895, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.430248, y: 2.21, z: -5.272546}
-  m_LocalScale: {x: 34.61214, y: 17.956627, z: 29.70973}
+  m_LocalPosition: {x: 5.42, y: 1.472, z: 0.4139614}
+  m_LocalScale: {x: 14.328802, y: 7.4337196, z: 12.299293}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -99,3 +101,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &64785655434645338
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1799772066054846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: f451b497cc888cd41a825824a7e4bbf6, type: 3}
+--- !u!114 &114485835488747316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1799772066054846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b02fc2924a9d042be0c9efa80c418f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progress: 0
+  type: raw_ingredient
+  salty: 0
+  sweet: 0
+  sour: 0
+  spicy: 0

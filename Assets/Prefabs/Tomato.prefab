@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 23036601887196560}
   - component: {fileID: 54164614337608260}
   - component: {fileID: 135185011278018350}
+  - component: {fileID: 114935787879509180}
   m_Layer: 0
   m_Name: Tomato
-  m_TagString: pickup
+  m_TagString: ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,9 +37,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1245420649105768}
-  m_LocalRotation: {x: -0.6980953, y: -0.009016868, z: -0.009234128, w: 0.7158885}
-  m_LocalPosition: {x: 11.81, y: 1.59, z: 12.07}
-  m_LocalScale: {x: 0.021627732, y: 0.021627733, z: 0.11334636}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 3.4400187, y: 0.89508986, z: 1.7818346}
+  m_LocalScale: {x: 0.0139368605, y: 0.014069109, z: 0.0729964}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -100,6 +101,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114935787879509180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245420649105768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b02fc2924a9d042be0c9efa80c418f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progress: 0
+  type: raw_ingredient
+  salty: 0
+  sweet: 0
+  sour: 0
+  spicy: 0
 --- !u!135 &135185011278018350
 SphereCollider:
   m_ObjectHideFlags: 1

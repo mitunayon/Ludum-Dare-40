@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23667479247857976}
   - component: {fileID: 54684393983340920}
   - component: {fileID: 64452868847811576}
+  - component: {fileID: 114166993141658804}
   m_Layer: 0
   m_Name: saucepan
   m_TagString: pickup
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217693911455400}
   m_LocalRotation: {x: -0.55741173, y: -0.43507728, z: -0.43507728, w: 0.55741173}
-  m_LocalPosition: {x: 4.864, y: 1.22, z: 1.142}
+  m_LocalPosition: {x: 5.123, y: 1.271, z: 1.477}
   m_LocalScale: {x: 0.27242494, y: 0.27242494, z: 0.16639277}
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,3 +114,16 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: d5849304a9770b049a6f3aba9fc2d4cc, type: 3}
+--- !u!114 &114166993141658804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1217693911455400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acedbd1824abcf7468dfe898ef4ba2ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progress: 0
+  ingredients: []
