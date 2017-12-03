@@ -12,6 +12,7 @@ public class CustomerController : MonoBehaviour {
     private Collider collider;
     private bool isSeated = false;
     private Rigidbody rb;
+    public GameObject door; 
     // Use this for initialization
     void Start () {
         agent = GetComponent<NavMeshAgent>();
@@ -25,7 +26,8 @@ public class CustomerController : MonoBehaviour {
         
         if (!isSeated) {
             target = GameObject.FindWithTag("empty seat");
-            if (target == null) {
+            if (target == null)
+            {
                 target = GameObject.Find("Player");
             }
             agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
@@ -33,19 +35,42 @@ public class CustomerController : MonoBehaviour {
         if (isHungry) {
             renderer.material.color = Color.red;
         }
+        else{
+            renderer.material.color = Color.green;
+        }
     }
 
     void OnCollisionEnter(Collision collision){
         GameObject seatGo = collision.gameObject;
         if (seatGo == target && !isSeated && target != GameObject.Find("Player")) {
+            //stop movement
             target.tag = "seat";
             isSeated = true;
             agent.isStopped = true;
             agent.enabled = false;
             collider.isTrigger = true;
             rb.isKinematic = true;
+            //moves customer to seat
             transform.position = seatGo.transform.Find("Sitting Position").transform.position;
         }
+    }
+
+    void OnTriggerEnter(Collider other){
+        if (other.gameObject.tag == "food") {
+            //restarts movement
+            Destroy(other.gameObject);
+            target.tag = "empty seat";
+            isSeated = false;
+            agent.isStopped = false;
+            agent.enabled = true;
+            collider.isTrigger = false;
+            rb.isKinematic = false;
+            isHungry = false;
+            //customer leaves
+            target = door;
+
+        }
+        
     }
 
 
