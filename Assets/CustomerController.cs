@@ -56,7 +56,7 @@ public class CustomerController : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other){
-        if (other.gameObject.tag == "food") {
+        if (other.gameObject.tag == "finished food") {
             //restarts movement
             Destroy(other.gameObject);
             target.tag = "empty seat";
