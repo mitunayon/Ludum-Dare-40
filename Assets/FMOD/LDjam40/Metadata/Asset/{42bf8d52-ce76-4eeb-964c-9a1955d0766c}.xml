@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.08.00">
+    <object class="EncodableAsset" id="{42bf8d52-ce76-4eeb-964c-9a1955d0766c}">
+        <property name="assetPath">
+            <value>Metal Pan hit/</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{cfa32f15-54d4-4a77-a187-4052b086dff0}</destination>
+        </relationship>
+    </object>
+</objects>

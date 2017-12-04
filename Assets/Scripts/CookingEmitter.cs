@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CookingEmitter : MonoBehaviour {
     public float cookRate = 1f;
+    public GameObject smokePfx;
 	// Use this for initialization
 	void Start () {
 		
@@ -22,6 +23,8 @@ public class CookingEmitter : MonoBehaviour {
             CookingContainer cookCtrl = other.transform.GetComponent<CookingContainer>();
             
             cookCtrl.AddCookingProgress(cookRate);
+            GameObject inst = Instantiate(smokePfx, other.transform.position,other.transform.rotation);
+            Destroy(inst, 3f);
         }
         
     }
