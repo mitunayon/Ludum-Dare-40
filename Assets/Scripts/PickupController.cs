@@ -13,6 +13,8 @@ public class PickupController : MonoBehaviour {
 	private RaycastHit hit;
 	public GameObject pickedup_object;
 	public Rigidbody pickedup_objectRb;
+    [SerializeField]
+    private float pickupDistance = 4f;
 	[SerializeField]
 	private float smooth;
 	public bool pickedup;
@@ -45,7 +47,7 @@ public class PickupController : MonoBehaviour {
     private void pickingUp(){
         //if left click with out holding anything
 		if (Input.GetMouseButtonDown(0) && !pickedup){
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 3.5f)){
+            if (Physics.Raycast(transform.position, transform.forward, out hit, pickupDistance)){
                 pickedup_object = hit.collider.gameObject;
                 pickedup_objectRb = hit.rigidbody;
                 if (pickedup_object.tag == "pickup" || pickedup_object.tag == "ingredient" || pickedup_object.tag == "container" || pickedup_object.tag == "serving plate" || pickedup_object.tag == "finished food")
