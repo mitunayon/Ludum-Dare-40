@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
     public GameObject meatChunksObj;
     public GameObject grilledMeatObj;
     public GameObject yuckObj;
+    public GameObject toastObj;
     public GameObject[] ingredientReward;
     public GameObject player;
     public int money = 0;

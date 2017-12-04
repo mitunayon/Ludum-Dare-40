@@ -106,6 +106,21 @@ public class CookingContainer : MonoBehaviour {
                         }
 
                     }
+                    if (ingredients.Contains("Bread"))
+                    {
+                        if (CountFood("Bread") == 2)
+                        {
+                            Instantiate(gameCtrl.toastObj, transform.position, transform.rotation);
+                            ClearIngredients();
+                            break;
+                        }
+                        else
+                        {
+                            Instantiate(gameCtrl.yuckObj, transform.position, transform.rotation);
+                            ClearIngredients();
+                            break;
+                        }
+                    }
                     
 
                     

@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 64898492240727864}
   - component: {fileID: 114135289783299882}
   - component: {fileID: 208033704947248534}
+  - component: {fileID: 114103409068727902}
   m_Layer: 0
   m_Name: Carrot
   m_TagString: ingredient
@@ -116,6 +117,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 81286edc4f494044fa0cdd7193fce908, type: 3}
+--- !u!114 &114103409068727902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010495391756072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b02fc2924a9d042be0c9efa80c418f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Vegetable
 --- !u!114 &114135289783299882
 MonoBehaviour:
   m_ObjectHideFlags: 1
