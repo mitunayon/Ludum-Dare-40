@@ -16,7 +16,7 @@ public class CookingContainer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        pickupCtrl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PickupController>();
+        pickupCtrl = Camera.main.GetComponent<PickupController>();
         gameCtrl = GameObject.Find("GameController").GetComponent<GameController>();
     }
 	
@@ -32,11 +32,9 @@ public class CookingContainer : MonoBehaviour {
         switch (collision.transform.tag)
         {
             case "ingredient":
-                print("Added " + collision.collider.name.ToString());
+                //print("Added " + collision.collider.name.ToString());
                 FoodController foodCtrl = collision.collider.GetComponent<FoodController>();
-
-                ingredients.Add(collision.collider.name.ToString());
-
+                ingredients.Add(foodCtrl.getType());
                 if (pickupCtrl.pickedup_object.tag == "ingredient")
                 {
                     pickupCtrl.pickedup_object = null;
@@ -50,12 +48,15 @@ public class CookingContainer : MonoBehaviour {
                 }
                 Destroy(collision.transform.gameObject);
                 break;
-
+            //if pan touches the serving plate
             case "serving plate":
                 print("served");
+               //if the food is fully cooked and ingredients are more than 0
                 if (isCooked && ingredients.Count > 0)
                 {
-
+                    if (ingredients.Contains("Meat") && ingredients.Contains("Bread")) {
+                        Instantiate(gameCtrl.sandwichObj, transform.position, transform.rotation);
+                    }
                     Instantiate(gameCtrl.soupObj, transform.position, transform.rotation);
                     ClearIngredients();
                 }

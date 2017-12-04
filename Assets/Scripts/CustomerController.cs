@@ -12,7 +12,7 @@ public class CustomerController : MonoBehaviour {
     private Collider coll;
     private bool isSeated = false;
     private Rigidbody rb;
-    private GameObject door; 
+    private GameObject door;
     // Use this for initialization
     void Start () {
         agent = GetComponent<NavMeshAgent>();
