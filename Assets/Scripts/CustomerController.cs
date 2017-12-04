@@ -20,12 +20,16 @@ public class CustomerController : MonoBehaviour {
         coll = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
         agent.enabled = true;
+
+
         target = GameObject.FindWithTag("empty seat");
         agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
     }
 	
 	// Update is called once per frame
 	void Update () {
+
+
         if (!isSeated)
         {
             target = GameObject.FindWithTag("empty seat");
@@ -75,6 +79,8 @@ public class CustomerController : MonoBehaviour {
             //customer leaves
             target = GameObject.Find("Customer Spawn");
             agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
+            // drop an ingredient + money
+
         }
         
     }

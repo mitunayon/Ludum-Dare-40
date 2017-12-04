@@ -3,7 +3,7 @@ using UnityEngine;
 public class ExampleWheelController : MonoBehaviour
 {
     public float acceleration;
-    public Renderer motionVectorRenderer; // Reference to the custom motion vector renderer
+    public Renderer motionVectorRenderer; // Reference to the custom motion vector rend
 
     Rigidbody m_Rigidbody;
 
@@ -27,7 +27,7 @@ public class ExampleWheelController : MonoBehaviour
 
         float m = -m_Rigidbody.angularVelocity.x / 100; // Calculate multiplier for motion vector texture
 
-        if (motionVectorRenderer) // If the custom motion vector texture renderer exists
-            motionVectorRenderer.material.SetFloat(Uniforms._MotionAmount, Mathf.Clamp(m, -0.25f, 0.25f)); // Set the multiplier on the renderer's material
+        if (motionVectorRenderer) // If the custom motion vector texture rend exists
+            motionVectorRenderer.material.SetFloat(Uniforms._MotionAmount, Mathf.Clamp(m, -0.25f, 0.25f)); // Set the multiplier on the rend's material
     }
 }
