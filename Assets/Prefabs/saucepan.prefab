@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 64452868847811576}
   - component: {fileID: 114166993141658804}
   - component: {fileID: 114166870961499946}
+  - component: {fileID: 208301746504626424}
   m_Layer: 0
   m_Name: saucepan
   m_TagString: container
@@ -55,14 +56,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217693911455400}
-  m_LocalRotation: {x: -0.55741173, y: -0.43507728, z: -0.43507728, w: 0.55741173}
-  m_LocalPosition: {x: 5.123, y: 1.271, z: 1.477}
+  m_LocalRotation: {x: 0.04759561, y: 0.7055033, z: 0.705503, w: -0.047595568}
+  m_LocalPosition: {x: -13.855999, y: 2.95, z: -1.241}
   m_LocalScale: {x: 0.27242494, y: 0.27242494, z: 0.16639277}
   m_Children:
   - {fileID: 4714299431036792}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -75.94601}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 187.719}
 --- !u!4 &4714299431036792
 Transform:
   m_ObjectHideFlags: 1
@@ -216,6 +217,21 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 52bb03411f881514a960ff3d6556350d, type: 3}
   - {fileID: 21300000, guid: b0e858824e842e44196bc754ccd6c689, type: 3}
   - {fileID: 21300000, guid: f4f566e71972582458634d8ba800f489, type: 3}
+--- !u!208 &208301746504626424
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1217693911455400}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.99000007, y: 1.8310001, z: 0.45700002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.83100003, z: 0.74500006}
+  m_TimeToStationary: 0.5
 --- !u!212 &212127005360438678
 SpriteRenderer:
   m_ObjectHideFlags: 1

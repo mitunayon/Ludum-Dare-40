@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54529717777499354}
   - component: {fileID: 64898492240727864}
   - component: {fileID: 114135289783299882}
+  - component: {fileID: 208033704947248534}
   m_Layer: 0
   m_Name: Carrot
   m_TagString: ingredient
@@ -126,9 +127,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b02fc2924a9d042be0c9efa80c418f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progress: 0
   type: cheese
-  salty: 0
-  sweet: 0
-  sour: 0
-  spicy: 0
+--- !u!208 &208033704947248534
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010495391756072}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.614, y: 0.605, z: 1.2980001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.003, y: 0.001, z: 0.261}
+  m_TimeToStationary: 0.5

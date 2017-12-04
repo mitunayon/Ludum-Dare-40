@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23206384229567062}
   - component: {fileID: 64172425520322684}
   - component: {fileID: 54493258793048654}
+  - component: {fileID: 208706242397212256}
   m_Layer: 0
   m_Name: Grilled Meat
   m_TagString: finished food
@@ -114,3 +115,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: de53407e865f4354e93f6a2bc246ae43, type: 3}
+--- !u!208 &208706242397212256
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1408397135378708}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.82400006, y: 0.96300006, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.17600001, y: -0.037, z: 0}
+  m_TimeToStationary: 0.5

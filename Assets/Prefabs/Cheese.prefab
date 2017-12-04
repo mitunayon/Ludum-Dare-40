@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54739109640348630}
   - component: {fileID: 64785655434645338}
   - component: {fileID: 114485835488747316}
+  - component: {fileID: 208206251770200244}
   m_Layer: 0
   m_Name: Cheese
   m_TagString: ingredient
@@ -126,9 +127,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b02fc2924a9d042be0c9efa80c418f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progress: 0
   type: raw_ingredient
-  salty: 0
-  sweet: 0
-  sour: 0
-  spicy: 0
+--- !u!208 &208206251770200244
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1799772066054846}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.010000001, y: 0.010000001, z: 0.010000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

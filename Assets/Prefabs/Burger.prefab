@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 64136717418847104}
   - component: {fileID: 54218223571268636}
   - component: {fileID: 114457264285340914}
+  - component: {fileID: 208089282203362146}
   m_Layer: 0
   m_Name: Burger
   m_TagString: finished food
@@ -130,3 +131,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: Meat
+--- !u!208 &208089282203362146
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1518815804011834}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.6170001, y: 1.7630001, z: 0.48600003}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.13000001, y: 0.064, z: -0.078}
+  m_TimeToStationary: 0.5

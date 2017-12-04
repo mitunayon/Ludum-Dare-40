@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23268510738279944}
   - component: {fileID: 54981574830730028}
   - component: {fileID: 64234301694930590}
+  - component: {fileID: 208047809769333080}
   m_Layer: 0
   m_Name: Meaty chunks
   m_TagString: finished food
@@ -117,3 +118,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: dade4aa92cbf1cd4e9bdc89dfc397f6f, type: 3}
+--- !u!208 &208047809769333080
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1117523591050382}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.6650001, y: 1.6650001, z: 0.238}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.038000003, y: -0.004, z: 0.085}
+  m_TimeToStationary: 0.5

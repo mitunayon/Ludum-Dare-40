@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54164614337608260}
   - component: {fileID: 135185011278018350}
   - component: {fileID: 114935787879509180}
+  - component: {fileID: 208415680800403700}
   m_Layer: 0
   m_Name: Tomato
   m_TagString: ingredient
@@ -125,3 +126,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.8903325
   m_Center: {x: 0.09492281, y: 0.015126901, z: -0.11875271}
+--- !u!208 &208415680800403700
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245420649105768}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 13.571001, y: 14.147, z: 13.571001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.026, y: 0.015000001, z: -0.119}
+  m_TimeToStationary: 0.5

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33965010216724808}
   - component: {fileID: 65147574352540480}
   - component: {fileID: 23740845503492514}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SittingPosition
   m_TagString: empty seat
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1396984588030434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.7323384, y: 2.55, z: -3.1220527}
+  m_LocalPosition: {x: -11.24, y: 2.81, z: -3.22}
   m_LocalScale: {x: 1.1963019, y: 1.1963003, z: 1.1963003}
   m_Children: []
   m_Father: {fileID: 0}
@@ -48,7 +48,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1396984588030434}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

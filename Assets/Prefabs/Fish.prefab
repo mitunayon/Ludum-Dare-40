@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54316634955696336}
   - component: {fileID: 64849197949339014}
   - component: {fileID: 114093765088454130}
+  - component: {fileID: 208579902857407950}
   m_Layer: 0
   m_Name: Fish
   m_TagString: ingredient
@@ -127,9 +128,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b02fc2924a9d042be0c9efa80c418f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progress: 0
   type: raw_ingredient
-  salty: 0
-  sweet: 0
-  sour: 0
-  spicy: 0
+--- !u!208 &208579902857407950
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1766328103751568}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.3370001, y: 1.7700001, z: 6.4810004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.164, y: -0.045, z: 0.51600003}
+  m_TimeToStationary: 0.5
