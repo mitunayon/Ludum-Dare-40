@@ -57,32 +57,48 @@ public class CookingContainer : MonoBehaviour {
                //if the food is fully cooked and ingredients are more than 0
                 if (isCooked && ingredients.Count > 0)
                 {
-                    if (ingredients.Contains("Meat") ) {
-                        //Combination and Bread
-                        if (ingredients.Contains("Bread")) {
+                    if (ingredients.Contains("Meat"))
+                    {
+                        //Combination Meat and Bread
+                        if (ingredients.Contains("Bread"))
+                        {
                             Instantiate(gameCtrl.sandwichObj, transform.position, transform.rotation);
                             ClearIngredients();
+                            break;
                         }
-                        
-                    }
-
-                    if (ingredients.Contains("Vegetable"))
-                    {
-                        int tomatoCount = 0;
-                        foreach (string i  in ingredients)
+                        //Combination Meat and Vegetables
+                        if (ingredients.Contains("Vegetable"))
                         {
-                            if (i == "Vegetable") {
-                                tomatoCount++;
-                            }
+                            Instantiate(gameCtrl.meatChunksObj, transform.position, transform.rotation);
+                            ClearIngredients();
+                            break;
                         }
-                        if (tomatoCount == 2) {
+                        //Combination Meat and Meat
+                        if (countFood("Meat") == 2)
+                        {
+                            Instantiate(gameCtrl.grilledMeatObj, transform.position, transform.rotation);
+                            ClearIngredients();
+                            break;
+                        }
+                    }
+                    else if (ingredients.Contains("Vegetable"))
+                    {
+                        //Combination 2 Vegetables
+                        if (countFood("Vegetable") == 2)
+                        {
                             Instantiate(gameCtrl.soupObj, transform.position, transform.rotation);
                             ClearIngredients();
+                            break;
                         }
-                        
+
+                    }
+                    else {
+                        Instantiate(gameCtrl.yuckObj, transform.position, transform.rotation);
+                        ClearIngredients();
+                        break;
                     }
 
-                    // Instantiate(gameCtrl.soupObj, transform.position, transform.rotation);
+                    
 
                 }
                 break;
@@ -113,5 +129,17 @@ public class CookingContainer : MonoBehaviour {
             }
         }
         
+    }
+
+    private int countFood(string type) {
+        int count = 0;
+        foreach (string i in ingredients)
+        {
+            if (i == type)
+            {
+                count++;
+            }
+        }
+        return count;
     }
 }
