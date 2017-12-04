@@ -55,6 +55,11 @@ MonoBehaviour:
   soupObj: {fileID: 1898971485378780, guid: 8af281491294e0247ba82e2bbbba0b2c, type: 2}
   sandwichObj: {fileID: 1518815804011834, guid: 9d4dfab12365b9d418749828e7e8ff6e,
     type: 2}
+  meatChunksObj: {fileID: 1117523591050382, guid: 430ea367fcd47ee4ea4a86608c5f1a38,
+    type: 2}
+  grilledMeatObj: {fileID: 1408397135378708, guid: f829661f1cac09e489ca5da8c6280b34,
+    type: 2}
+  yuckObj: {fileID: 0}
   ingredientReward:
   - {fileID: 1245420649105768, guid: 56b5659a295238347850953fcec9ffc1, type: 2}
   - {fileID: 1799772066054846, guid: 7b36901615498b64aafb535179b52e11, type: 2}
