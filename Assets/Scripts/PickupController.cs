@@ -67,8 +67,7 @@ public class PickupController : MonoBehaviour {
 				pickedup_objectRb.angularDrag = 5f;
 				pickedup_object.transform.position = Vector3.Lerp (pickedup_object.transform.position, transform.position + transform.forward * distanceFromFace, Time.deltaTime * smooth);
                 //pickedup_object.transform.LookAt(transform);
-                
-                    rotateObject(pickedup_object);
+                rotateObject(pickedup_object);
             }
 
 			if (pickedup == false && pickedup_objectRb != null) {
