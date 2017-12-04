@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour {
     public GameObject soupObj;
     public GameObject sandwichObj;
     public GameObject[] ingredientReward;
+    public GameObject player;
     public int money = 0;
 	// Use this for initialization
 	void Start () {

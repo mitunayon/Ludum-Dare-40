@@ -61,4 +61,5 @@ MonoBehaviour:
   - {fileID: 1010495391756072, guid: 60df6e117f4e43a448198627252776e6, type: 2}
   - {fileID: 1400218533703692, guid: 9eacbe2cb60994244854c75205da4379, type: 2}
   - {fileID: 1037610045157206, guid: 3dc03123bc6a4a146833c444ebf6787a, type: 2}
+  player: {fileID: 0}
   money: 0

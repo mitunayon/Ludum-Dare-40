@@ -57,10 +57,15 @@ public class CookingContainer : MonoBehaviour {
                //if the food is fully cooked and ingredients are more than 0
                 if (isCooked && ingredients.Count > 0)
                 {
-                    if (ingredients.Contains("Meat") && ingredients.Contains("Bread")) {
-                        Instantiate(gameCtrl.sandwichObj, transform.position, transform.rotation);
-                        ClearIngredients();
+                    if (ingredients.Contains("Meat") ) {
+                        //Combination and Bread
+                        if (ingredients.Contains("Bread")) {
+                            Instantiate(gameCtrl.sandwichObj, transform.position, transform.rotation);
+                            ClearIngredients();
+                        }
+                        
                     }
+
                     if (ingredients.Contains("Vegetable"))
                     {
                         int tomatoCount = 0;
