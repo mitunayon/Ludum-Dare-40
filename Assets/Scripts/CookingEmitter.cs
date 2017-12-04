@@ -18,7 +18,7 @@ public class CookingEmitter : MonoBehaviour {
     {
         if (other.transform.tag == "container")
         {
-            print("Cooking Added");
+            
             CookingContainer cookCtrl = other.transform.GetComponent<CookingContainer>();
             
             cookCtrl.AddCookingProgress(cookRate);
