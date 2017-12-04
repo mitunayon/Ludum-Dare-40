@@ -74,7 +74,7 @@ public class CookingContainer : MonoBehaviour {
                             break;
                         }
                         //Combination Meat and Meat
-                        if (countFood("Meat") == 2)
+                        if (CountFood("Meat") == 2)
                         {
                             Instantiate(gameCtrl.grilledMeatObj, transform.position, transform.rotation);
                             ClearIngredients();
@@ -91,7 +91,7 @@ public class CookingContainer : MonoBehaviour {
                     if (ingredients.Contains("Vegetable"))
                     {
                         //Combination 2 Vegetables
-                        if (countFood("Vegetable") == 2)
+                        if (CountFood("Vegetable") == 2)
                         {
                             Instantiate(gameCtrl.soupObj, transform.position, transform.rotation);
                             ClearIngredients();
@@ -116,7 +116,7 @@ public class CookingContainer : MonoBehaviour {
         }
 
     }
-    void ClearIngredients()
+    private void ClearIngredients()
     {
         ingredients.Clear();
         progress = 0f;
@@ -141,7 +141,7 @@ public class CookingContainer : MonoBehaviour {
         
     }
 
-    private int countFood(string type) {
+    private int CountFood(string type) {
         int count = 0;
         foreach (string i in ingredients)
         {
