@@ -49,14 +49,31 @@ public class PickupController : MonoBehaviour {
     private void pickingUp(){
         //if left click with out holding anything
 		if (Input.GetMouseButtonDown(0) && !pickedup){
-            if (Physics.Raycast(transform.position, transform.forward, out hit, pickupDistance)){
+            RaycastHit[] hits;
+            hits = Physics.RaycastAll(new Ray(transform.position, transform.forward), pickupDistance);
+
+            for (int i = 0; i < hits.Length; i++)
+            {
+                RaycastHit hit = hits[i];
+                Renderer rend = hit.transform.GetComponent<Renderer>();
+                pickedup_object = hit.collider.gameObject;
+                pickedup_objectRb = hit.rigidbody;
+                if (pickedup_object.tag == "pickup" || pickedup_object.tag == "ingredient" || pickedup_object.tag == "container" || pickedup_object.tag == "finished food")
+                {
+                    pickedup = !pickedup;
+                    break;
+                }
+               
+            }
+
+            /*if (Physics.Raycast(transform.position, transform.forward, out hit, pickupDistance)){
                 pickedup_object = hit.collider.gameObject;
                 pickedup_objectRb = hit.rigidbody;
                 if (pickedup_object.tag == "pickup" || pickedup_object.tag == "ingredient" || pickedup_object.tag == "container" || pickedup_object.tag == "serving plate" || pickedup_object.tag == "finished food")
                 {
                     pickedup = !pickedup;
                 }
-            }
+            }*/
 		}
        
 
