@@ -11,6 +11,8 @@ TagManager:
   - empty seat
   - seat
   - finished food
+  - taken seat
+  - money
   layers:
   - Default
   - TransparentFX
