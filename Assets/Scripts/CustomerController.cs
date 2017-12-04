@@ -8,16 +8,16 @@ public class CustomerController : MonoBehaviour {
     private NavMeshAgent agent;
     [SerializeField]
     private GameObject target;
-    private Renderer renderer;
-    private Collider collider;
+    private Renderer rend;
+    private Collider coll;
     private bool isSeated = false;
     private Rigidbody rb;
     private GameObject door; 
     // Use this for initialization
     void Start () {
         agent = GetComponent<NavMeshAgent>();
-        renderer = GetComponent<Renderer>();
-        collider = GetComponent<Collider>();
+        rend = GetComponent<Renderer>();
+        coll = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
         agent.enabled = true;
         target = GameObject.FindWithTag("empty seat");
@@ -39,11 +39,11 @@ public class CustomerController : MonoBehaviour {
         
 
         if (isHungry) {
-            renderer.material.color = Color.red;
+            rend.material.color = Color.red;
             
         }
         else{
-            renderer.material.color = Color.green;
+            rend.material.color = Color.green;
         }
     }
 
@@ -55,7 +55,7 @@ public class CustomerController : MonoBehaviour {
             isSeated = true;
             agent.isStopped = true;
             agent.enabled = false;
-            collider.isTrigger = true;
+            coll.isTrigger = true;
             rb.isKinematic = true;
             //moves customer to seat
             transform.position = seatGo.transform.Find("Sitting Position").transform.position;
@@ -69,7 +69,7 @@ public class CustomerController : MonoBehaviour {
             target.tag = "empty seat";
             agent.enabled = true;
             agent.isStopped = false;
-            collider.isTrigger = false;
+            coll.isTrigger = false;
             rb.isKinematic = false;
             isHungry = false;
             //customer leaves
