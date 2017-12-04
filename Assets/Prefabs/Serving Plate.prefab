@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 54462345873363510}
   - component: {fileID: 64040942428268428}
   - component: {fileID: 208521878154673458}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Serving Plate
   m_TagString: serving plate
   m_Icon: {fileID: 0}

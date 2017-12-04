@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 23905294555187594}
   - component: {fileID: 64608777363942598}
   - component: {fileID: 54034043587170816}
-  - component: {fileID: 208751101506513686}
   m_Layer: 0
   m_Name: Yuck
   m_TagString: finished food
@@ -120,18 +119,3 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 57b06df26c17c3a4d8963fffec2c202e, type: 3}
---- !u!208 &208751101506513686
-NavMeshObstacle:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1921932589167806}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 10.955001, y: 10.551001, z: 17.67}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: -3.3920002, y: 2.2080002, z: 5.3560004}
-  m_TimeToStationary: 0.5
