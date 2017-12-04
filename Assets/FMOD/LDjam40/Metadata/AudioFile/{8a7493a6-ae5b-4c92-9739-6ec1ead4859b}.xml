@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.08.00">
+    <object class="AudioFile" id="{8a7493a6-ae5b-4c92-9739-6ec1ead4859b}">
+        <property name="assetPath">
+            <value>02-232358__richerlandtv__heavy-impacts.mp3</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.70530612244897961</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{cfa32f15-54d4-4a77-a187-4052b086dff0}</destination>
+        </relationship>
+    </object>
+</objects>

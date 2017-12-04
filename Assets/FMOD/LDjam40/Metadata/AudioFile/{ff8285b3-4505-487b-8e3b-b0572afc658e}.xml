@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.08.00">
+    <object class="AudioFile" id="{ff8285b3-4505-487b-8e3b-b0572afc658e}">
+        <property name="assetPath">
+            <value>272244__spanrucker__pan-hit-place-down.aiff</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>10.0144375</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{cfa32f15-54d4-4a77-a187-4052b086dff0}</destination>
+        </relationship>
+    </object>
+</objects>

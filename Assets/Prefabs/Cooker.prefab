@@ -22,13 +22,12 @@ GameObject:
   - component: {fileID: 33202613620228208}
   - component: {fileID: 23862667780738264}
   - component: {fileID: 65004001227776170}
-  - component: {fileID: 82629988455596666}
   m_Layer: 0
   m_Name: Cooker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1227389471425856
 GameObject:
@@ -45,7 +44,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1541921264046742
 GameObject:
@@ -62,7 +61,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1852999500857336
 GameObject:
@@ -79,7 +78,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1909764836408722
 GameObject:
@@ -94,12 +93,13 @@ GameObject:
   - component: {fileID: 114094343052979232}
   - component: {fileID: 136018713847654440}
   - component: {fileID: 114032529136094020}
+  - component: {fileID: 114125696944359052}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4036707443834646
 Transform:
@@ -159,8 +159,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1096623658336406}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 5.1960735, y: 0.593, z: 1.428}
+  m_LocalRotation: {x: 0.0027837977, y: 0.70710146, z: 0.70710117, w: -0.0027837232}
+  m_LocalPosition: {x: -10.68, y: 2.4273, z: 3.0036}
   m_LocalScale: {x: 57.038788, y: 57.038788, z: 57.038788}
   m_Children:
   - {fileID: 4036707443834646}
@@ -169,7 +169,7 @@ Transform:
   - {fileID: 4365648178498454}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 180.45099}
 --- !u!23 &23000250100444384
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -387,86 +387,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.021050593, y: 0.019999994, z: 0.020616}
   m_Center: {x: -0.000525298, y: 0, z: 0.0003080032}
---- !u!82 &82629988455596666
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1096623658336406}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!114 &114032529136094020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -479,6 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookRate: 1
+  smokePfx: {fileID: 1642311005228026, guid: e924fc757207b3b43b0d40cdf212d658, type: 2}
 --- !u!114 &114094343052979232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -491,6 +412,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookRate: 1
+  smokePfx: {fileID: 1642311005228026, guid: e924fc757207b3b43b0d40cdf212d658, type: 2}
+--- !u!114 &114125696944359052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1909764836408722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Frying
+  PlayEvent: 3
+  StopEvent: 0
+  CollisionTag: container
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!136 &136018713847654440
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -498,9 +442,9 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1909764836408722}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.999999
+  m_Radius: 0.81
+  m_Height: 54.664658
   m_Direction: 1
-  m_Center: {x: 0.00000005960464, y: 0.0000076293945, z: -0.0000010430813}
+  m_Center: {x: 0, y: 0.0000044452277, z: -0.8248592}
