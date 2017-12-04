@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEditor.Animations;
 
 public class CustomerController : MonoBehaviour {
     public bool isHungry = true;
@@ -13,9 +14,10 @@ public class CustomerController : MonoBehaviour {
     private NavMeshAgent agent;
     [SerializeField]
     private GameObject target;
-    private Renderer rend;
+   // private Renderer rend;
     private Collider coll;
-    
+    private Animator animator;
+
     private Rigidbody rb;
     private GameObject door;
 
@@ -25,11 +27,12 @@ public class CustomerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         agent = GetComponent<NavMeshAgent>();
-        rend = GetComponent<Renderer>();
+        //rend = GetComponent<Renderer>();
         coll = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
         agent.enabled = true;
-
+        animator.SetBool("isSitting", false);
         state = "looking for seat";
         gameCtrl = GameObject.Find("GameController").GetComponent<GameController>();
         
@@ -43,7 +46,7 @@ public class CustomerController : MonoBehaviour {
             case "looking for seat":
 
                 target = FindNearestEmptySeat(GameObject.FindGameObjectsWithTag("empty seat"));
-
+                animator.SetBool("isWalking", true);
                 if (target != null) 
                 {
                     target.tag = "taken seat";
@@ -58,19 +61,21 @@ public class CustomerController : MonoBehaviour {
                 break;
 
             case "going to seat":
+                animator.SetBool("isWalking", true);
                 if (isSeated == true) state = "waiting for food";
                 break;
 
             case "waiting for food":
-
+                animator.SetBool("isWalking", false);
+                animator.SetTrigger("isSitting");
                 if (isHungry)
                 {
-                    rend.material.color = Color.red;
+                    //rend.material.color = Color.red;
 
                 }
                 else
                 {
-                    rend.material.color = Color.green;
+                   // rend.material.color = Color.green;
                 }
 
                 if (fullness >= 100) state = "start leaving";
@@ -87,16 +92,19 @@ public class CustomerController : MonoBehaviour {
                 //customer leaves
                 target = GameObject.Find("Customer Spawn");
                 agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
-
+                animator.SetBool("isSitting", false);
+                animator.SetBool("isWalking", true);
                 state = "leaving";
                 break;
             case "leaving":
+                animator.SetBool("isWalking", true);
                 if (Vector3.Distance(target.transform.position, transform.position) <= 2f)
                 {
                     Destroy(gameObject);
                 }
                 break;
             case "angry":
+                animator.SetBool("isWalking", true);
                 //print(name.ToString()+ " is angry >:( !!");
                 break;
         }
@@ -131,6 +139,7 @@ public class CustomerController : MonoBehaviour {
                     rb.isKinematic = true;
                     //moves customer to seat
                     transform.position = target.transform.position;
+                    transform.rotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
                 }
                 break;
         }     
