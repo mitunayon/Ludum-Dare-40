@@ -80,8 +80,15 @@ public class CookingContainer : MonoBehaviour {
                             ClearIngredients();
                             break;
                         }
+                        //if no combination is viable
+                        else
+                        {
+                            Instantiate(gameCtrl.yuckObj, transform.position, transform.rotation);
+                            ClearIngredients();
+                            break;
+                        }
                     }
-                    else if (ingredients.Contains("Vegetable"))
+                    if (ingredients.Contains("Vegetable"))
                     {
                         //Combination 2 Vegetables
                         if (countFood("Vegetable") == 2)
@@ -90,13 +97,16 @@ public class CookingContainer : MonoBehaviour {
                             ClearIngredients();
                             break;
                         }
+                        //if no combination is viable
+                        else
+                        {
+                            Instantiate(gameCtrl.yuckObj, transform.position, transform.rotation);
+                            ClearIngredients();
+                            break;
+                        }
 
                     }
-                    else {
-                        Instantiate(gameCtrl.yuckObj, transform.position, transform.rotation);
-                        ClearIngredients();
-                        break;
-                    }
+                    
 
                     
 
