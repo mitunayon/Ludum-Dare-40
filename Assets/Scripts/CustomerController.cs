@@ -19,13 +19,13 @@ public class CustomerController : MonoBehaviour {
     private Animator animator;
 
     private Rigidbody rb;
-    private GameObject door;
 
     GameController gameCtrl;
     public string state;
 
     // Use this for initialization
     void Start () {
+        gameObject.layer = 9;
         agent = GetComponent<NavMeshAgent>();
         //rend = GetComponent<Renderer>();
         coll = GetComponent<Collider>();
@@ -66,6 +66,7 @@ public class CustomerController : MonoBehaviour {
                 break;
 
             case "waiting for food":
+                gameObject.layer = 0;
                 animator.SetBool("isWalking", false);
                 animator.SetTrigger("isSitting");
                 if (isHungry)
@@ -88,11 +89,10 @@ public class CustomerController : MonoBehaviour {
                 agent.isStopped = false;
                 coll.isTrigger = false;
                 rb.isKinematic = false;
-               
+                gameObject.layer = 9;
                 //customer leaves
-                target = GameObject.Find("Customer Spawn");
+                target = GameObject.Find("portal");
                 agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
-                animator.SetBool("isSitting", false);
                 animator.SetBool("isWalking", true);
                 state = "leaving";
                 break;
@@ -167,7 +167,7 @@ public class CustomerController : MonoBehaviour {
         //print("drop reward"+gameObject.name.ToString());
         for (int i = 0; i < repeat; i++)
         {
-            Instantiate(money, transform.position, transform.rotation);
+            Instantiate(money, transform.position +transform.forward * 2, transform.rotation);
             Instantiate(gameCtrl.ingredientReward[Random.Range(0, gameCtrl.ingredientReward.Length-1)], transform.position, transform.rotation);
             
         }
