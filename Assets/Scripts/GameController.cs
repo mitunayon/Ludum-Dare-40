@@ -6,7 +6,8 @@ public class GameController : MonoBehaviour {
 
     public string gameState = "live";
     public GameObject soupObj;
-
+    public GameObject[] ingredientReward;
+    public int money = 0;
 	// Use this for initialization
 	void Start () {
 		
