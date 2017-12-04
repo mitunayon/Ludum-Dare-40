@@ -114,6 +114,10 @@ public class CustomerController : MonoBehaviour {
                    
                     DropReward(Random.Range(1,4));
                     Destroy(other.gameObject);
+                    PickupController pickupCtrl = Camera.main.GetComponent<PickupController>();
+                    pickupCtrl.pickedup_object = null;
+                    pickupCtrl.pickedup_objectRb = null;
+                    pickupCtrl.pickedup = false;
                 }
                 break;
             case "taken seat":
@@ -155,7 +159,7 @@ public class CustomerController : MonoBehaviour {
         for (int i = 0; i < repeat; i++)
         {
             Instantiate(money, transform.position, transform.rotation);
-            Instantiate(gameCtrl.ingredientReward[Random.Range(0, 4)], transform.position, transform.rotation);
+            Instantiate(gameCtrl.ingredientReward[Random.Range(0, gameCtrl.ingredientReward.Length-1)], transform.position, transform.rotation);
             
         }
 
