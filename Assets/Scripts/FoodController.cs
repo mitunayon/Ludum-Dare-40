@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class FoodController : MonoBehaviour
 {
-    public static string[] types = { "Meat", "Vegetable", "Water", "Bread", "Potatoes", "Dairy"};
+    private static string[] types = { "Meat", "Vegetable", "Water", "Bread", "Potatoes", "Dairy"};
     [SerializeField]
     private string type;
 
@@ -15,6 +16,9 @@ public class FoodController : MonoBehaviour
 
     private void Start()
     {
+        if (!types.Contains(type)) {
+            Debug.Log("Error: Invalid weapon type");
+        }
     }
 
 }
