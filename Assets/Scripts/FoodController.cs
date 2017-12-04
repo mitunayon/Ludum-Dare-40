@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class FoodController : MonoBehaviour
 {
-    public static string[] types = { "Meat", "Vegetables", "Water", "Bread", "Potatoes", "Dairy"};
+    public static string[] types = { "Meat", "Vegetable", "Water", "Bread", "Potatoes", "Dairy"};
     [SerializeField]
     private string type;
 

@@ -61,9 +61,24 @@ public class CookingContainer : MonoBehaviour {
                         Instantiate(gameCtrl.sandwichObj, transform.position, transform.rotation);
                         ClearIngredients();
                     }
+                    if (ingredients.Contains("Vegetable"))
+                    {
+                        int tomatoCount = 0;
+                        foreach (string i  in ingredients)
+                        {
+                            if (i == "Vegetable") {
+                                tomatoCount++;
+                            }
+                        }
+                        if (tomatoCount == 2) {
+                            Instantiate(gameCtrl.soupObj, transform.position, transform.rotation);
+                            ClearIngredients();
+                        }
+                        
+                    }
 
-                   // Instantiate(gameCtrl.soupObj, transform.position, transform.rotation);
-                    
+                    // Instantiate(gameCtrl.soupObj, transform.position, transform.rotation);
+
                 }
                 break;
             
