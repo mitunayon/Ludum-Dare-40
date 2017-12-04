@@ -15,7 +15,9 @@ public class PickupController : MonoBehaviour {
 	public Rigidbody pickedup_objectRb;
     [SerializeField]
     private float pickupDistance = 4f;
-	[SerializeField]
+    [SerializeField]
+    private float distanceFromFace = 2f;
+    [SerializeField]
 	private float smooth;
 	public bool pickedup;
 	[SerializeField]
@@ -63,7 +65,7 @@ public class PickupController : MonoBehaviour {
             if (pickedup) {
 				pickedup_objectRb.useGravity = false;
 				pickedup_objectRb.angularDrag = 5f;
-				pickedup_object.transform.position = Vector3.Lerp (pickedup_object.transform.position, transform.position + transform.forward * 2, Time.deltaTime * smooth);
+				pickedup_object.transform.position = Vector3.Lerp (pickedup_object.transform.position, transform.position + transform.forward * distanceFromFace, Time.deltaTime * smooth);
                 //pickedup_object.transform.LookAt(transform);
                 
                     rotateObject(pickedup_object);
