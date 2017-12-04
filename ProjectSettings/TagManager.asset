@@ -13,6 +13,7 @@ TagManager:
   - finished food
   - taken seat
   - money
+  - buy button
   layers:
   - Default
   - TransparentFX

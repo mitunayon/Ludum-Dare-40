@@ -33,9 +33,11 @@ public class PickupController : MonoBehaviour {
     }
 
     void Update(){
-		if (pickedup_object != null) {
+        ButtonPress();
+
+        if (pickedup_object != null) {
 			if (pickedup) {
-				shootItem (pickedup_objectRb);
+				ShootItem (pickedup_objectRb);
 			}
 		}
 	}
@@ -66,14 +68,6 @@ public class PickupController : MonoBehaviour {
                
             }
 
-            /*if (Physics.Raycast(transform.position, transform.forward, out hit, pickupDistance)){
-                pickedup_object = hit.collider.gameObject;
-                pickedup_objectRb = hit.rigidbody;
-                if (pickedup_object.tag == "pickup" || pickedup_object.tag == "ingredient" || pickedup_object.tag == "container" || pickedup_object.tag == "serving plate" || pickedup_object.tag == "finished food")
-                {
-                    pickedup = !pickedup;
-                }
-            }*/
 		}
        
 
@@ -84,7 +78,7 @@ public class PickupController : MonoBehaviour {
 				pickedup_objectRb.angularDrag = 5f;
 				pickedup_object.transform.position = Vector3.Lerp (pickedup_object.transform.position, transform.position + transform.forward * distanceFromFace, Time.deltaTime * smooth);
                 //pickedup_object.transform.LookAt(transform);
-                rotateObject(pickedup_object);
+                RotateObject(pickedup_object);
             }
 
 			if (pickedup == false && pickedup_objectRb != null) {
@@ -95,7 +89,7 @@ public class PickupController : MonoBehaviour {
 		}
 	}
 
-	private void shootItem(Rigidbody pickupRb){
+	private void ShootItem(Rigidbody pickupRb){
 		if (Input.GetMouseButtonDown(1)) {
 			startTime = Time.fixedTime;
 		}
@@ -115,7 +109,7 @@ public class PickupController : MonoBehaviour {
 		}
 	}
 
-    private void rotateObject(GameObject pickup){
+    private void RotateObject(GameObject pickup){
         //enable rotation of the object
         if (Input.GetMouseButton(2))
         {
@@ -127,6 +121,21 @@ public class PickupController : MonoBehaviour {
             pickup.transform.Rotate(cam.forward, -Mathf.Deg2Rad * Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed, Space.World);
         }
     }
-
+    private void ButtonPress()
+    {
+        //press e to buy food
+        if (Input.GetKeyDown(KeyCode.E)) {
+            if (Physics.Raycast(transform.position, transform.forward, out hit, pickupDistance))
+            {
+               GameObject hitInfo = hit.collider.gameObject;
+                if (hitInfo.tag == "buy button")
+                {
+                    BuyController bController = hitInfo.GetComponent<BuyController>();
+                    bController.pressed = true;
+                }
+            }
+        }
+        
+    }
 
 }
