@@ -1915,6 +1915,7 @@ GameObject:
   - component: {fileID: 114286697789713588}
   - component: {fileID: 195284024578191310}
   - component: {fileID: 54665094565593582}
+  - component: {fileID: 114023482173658698}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Untagged
@@ -4778,6 +4779,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114023482173658698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1806482309214862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: 
+  PlayEvent: 3
+  StopEvent: 0
+  CollisionTag: finished food
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!114 &114286697789713588
 MonoBehaviour:
   m_ObjectHideFlags: 1
