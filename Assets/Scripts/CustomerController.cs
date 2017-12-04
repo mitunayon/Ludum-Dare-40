@@ -4,15 +4,22 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class CustomerController : MonoBehaviour {
-    private bool isHungry = true;
+    public bool isHungry = true;
+    public bool isSeated = false;
+    public GameObject money;   
+    [SerializeField]
+    public float fullness = 0f;
+
     private NavMeshAgent agent;
     [SerializeField]
     private GameObject target;
     private Renderer rend;
     private Collider coll;
-    private bool isSeated = false;
+    
     private Rigidbody rb;
-    private GameObject door; 
+    private GameObject door;
+    GameController gameCtrl;
+    public string state;
     // Use this for initialization
     void Start () {
         agent = GetComponent<NavMeshAgent>();
@@ -21,69 +28,135 @@ public class CustomerController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         agent.enabled = true;
 
-
-        target = GameObject.FindWithTag("empty seat");
-        agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
+        state = "looking for seat";
+        gameCtrl = GameObject.Find("GameController").GetComponent<GameController>();
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-
-        if (!isSeated)
+        switch (state)
         {
-            target = GameObject.FindWithTag("empty seat");
-            if (target == null)
-            {
-                target = GameObject.Find("Player");
-            }
-            agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
+            case "looking for seat":
+
+                target = FindNearestEmptySeat(GameObject.FindGameObjectsWithTag("empty seat"));
+
+                if (target != null) 
+                {
+                    target.tag = "taken seat";
+                    state = "going to seat";
+                } else
+                {
+                    target = GameObject.Find("Player");
+                    state = "angry";
+                }
+                agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
+                
+                break;
+
+            case "going to seat":
+                if (isSeated == true) state = "waiting for food";
+                break;
+
+            case "waiting for food":
+
+                if (isHungry)
+                {
+                    rend.material.color = Color.red;
+
+                }
+                else
+                {
+                    rend.material.color = Color.green;
+                }
+
+                if (fullness >= 100) state = "start leaving";
+                    break;
+            case "start leaving":
+                //restarts movement
+                
+                target.tag = "empty seat";
+                agent.enabled = true;
+                agent.isStopped = false;
+                coll.isTrigger = false;
+                rb.isKinematic = false;
+               
+                //customer leaves
+                target = GameObject.Find("Customer Spawn");
+                agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
+
+                state = "leaving";
+                break;
+            case "leaving":
+                if (Vector3.Distance(target.transform.position, transform.position) <= 2f)
+                {
+                    Destroy(gameObject);
+                }
+                break;
+            case "angry":
+                //print(name.ToString()+ " is angry >:( !!");
+                break;
         }
-       
         
-
-        if (isHungry) {
-            rend.material.color = Color.red;
-            
-        }
-        else{
-            rend.material.color = Color.green;
-        }
     }
 
-    void OnCollisionEnter(Collision collision){
-        GameObject seatGo = collision.gameObject;
-        if (seatGo == target && !isSeated && target != GameObject.Find("Player")) {
-            //stop movement
-            target.tag = "seat";
-            isSeated = true;
-            agent.isStopped = true;
-            agent.enabled = false;
-            coll.isTrigger = true;
-            rb.isKinematic = true;
-            //moves customer to seat
-            transform.position = seatGo.transform.Find("Sitting Position").transform.position;
-        }
-    }
 
     void OnTriggerEnter(Collider other){
-        if (other.gameObject.tag == "finished food" && isSeated) {
-            //restarts movement
-            Destroy(other.gameObject);
-            target.tag = "empty seat";
-            agent.enabled = true;
-            agent.isStopped = false;
-            coll.isTrigger = false;
-            rb.isKinematic = false;
-            isHungry = false;
-            //customer leaves
-            target = GameObject.Find("Customer Spawn");
-            agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
-            // drop an ingredient + money
-
-        }
-        
+        switch (other.tag)
+        {
+            case "finished food":
+                if (isSeated)
+                {
+                    fullness += 50f;
+                   
+                    DropReward(Random.Range(1,4));
+                    Destroy(other.gameObject);
+                }
+                break;
+            case "taken seat":
+                if (other.gameObject == target && isSeated == false)
+                {
+                    target.tag = "seat";
+                    isSeated = true;
+                    agent.isStopped = true;
+                    agent.enabled = false;
+                    coll.isTrigger = true;
+                    rb.isKinematic = true;
+                    //moves customer to seat
+                    transform.position = target.transform.position;
+                }
+                break;
+        }     
     }
 
+    GameObject FindNearestEmptySeat(GameObject[] emptySeats)
+    {
+        GameObject chosenSeat = null;
+        float minDist = Mathf.Infinity;
+        Vector3 currentPos = transform.position;
+        foreach (GameObject seat in emptySeats)
+        {
+            float dist = Vector3.Distance(seat.transform.position, currentPos); 
+            if (dist < minDist)
+            {
+                chosenSeat = seat;
+                minDist = dist;
+            }
+        }
+        return chosenSeat;
+
+    }
+    void DropReward(int repeat)
+    {
+        //print("drop reward"+gameObject.name.ToString());
+        for (int i = 0; i < repeat; i++)
+        {
+            Instantiate(money, transform.position, transform.rotation);
+            Instantiate(gameCtrl.ingredientReward[Random.Range(0, 4)], transform.position, transform.rotation);
+            
+        }
+
+    }
 
 }

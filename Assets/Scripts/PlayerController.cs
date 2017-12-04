@@ -71,4 +71,15 @@ public class PlayerController : MonoBehaviour {
     {
         cam.transform.position = transform.position + camOffset;
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "money":
+                gameCtrl.money += Random.Range(1, 10);
+                Destroy(other.gameObject);
+                break;
+        }
+    }
 }
