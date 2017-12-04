@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d7b978efe41cd454d9fc7b2a067062ca
-timeCreated: 1512394561
+guid: b5fa54affeac95d4fa3be09790f769c2
+timeCreated: 1512394920
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -22,22 +22,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Cheese_Mat
-    second: {fileID: 2100000, guid: 33424c1b7336bcd45964f77d0b86ae3b, type: 2}
+    second: {fileID: 2100000, guid: 5c3205dfc32576342aed4edbe7f9e8e9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Meat_Mat
-    second: {fileID: 2100000, guid: 73828c9ee91873a4a8e1ea2205592b0d, type: 2}
+    second: {fileID: 2100000, guid: e10bd6d90de56b148a8b7fe146d798ed, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Onion_Mat
-    second: {fileID: 2100000, guid: 72996e147ba265c4eaa1a20c32588f64, type: 2}
+    second: {fileID: 2100000, guid: 3ac121dcdf024b545a26051c532dad0d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: cabbage_Mat
-    second: {fileID: 2100000, guid: 93ed3e7413afba54c8acc0c409ec7feb, type: 2}
+    second: {fileID: 2100000, guid: 61c2c972a4b4f8840bd2dd43539928ec, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

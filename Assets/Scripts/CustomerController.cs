@@ -18,8 +18,10 @@ public class CustomerController : MonoBehaviour {
     
     private Rigidbody rb;
     private GameObject door;
+
     GameController gameCtrl;
     public string state;
+
     // Use this for initialization
     void Start () {
         agent = GetComponent<NavMeshAgent>();

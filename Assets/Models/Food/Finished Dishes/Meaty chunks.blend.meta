@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d7b978efe41cd454d9fc7b2a067062ca
-timeCreated: 1512394561
+guid: dade4aa92cbf1cd4e9bdc89dfc397f6f
+timeCreated: 1512399832
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,35 +9,35 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube
+    4300000: Plane
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Bread_Mat
-    second: {fileID: 2100000, guid: 42004ea723d113141842646ae614b765, type: 2}
+      name: Meaty_Chunks_Varations
+    second: {fileID: 2100000, guid: 47573fe9301e48542915e8b868ff6fae, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Cheese_Mat
-    second: {fileID: 2100000, guid: 33424c1b7336bcd45964f77d0b86ae3b, type: 2}
+      name: Meaty_Meaty_Chunks_Material
+    second: {fileID: 2100000, guid: 49bcfdc272fb04f4c9607aecbc0d3da1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Meat_Mat
-    second: {fileID: 2100000, guid: 73828c9ee91873a4a8e1ea2205592b0d, type: 2}
+      name: PlateMat
+    second: {fileID: 2100000, guid: b21f4dd258e26b94b83749eaa327c23b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Onion_Mat
-    second: {fileID: 2100000, guid: 72996e147ba265c4eaa1a20c32588f64, type: 2}
+      name: Puck_Mat
+    second: {fileID: 2100000, guid: d4a8921442c8ec748ad5978869a3a282, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: cabbage_Mat
-    second: {fileID: 2100000, guid: 93ed3e7413afba54c8acc0c409ec7feb, type: 2}
+      name: Sauce_Mat
+    second: {fileID: 2100000, guid: 378f5bf8f2bd4324db8d097a1d1ae962, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

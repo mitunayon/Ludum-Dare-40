@@ -53,8 +53,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: live
   soupObj: {fileID: 1898971485378780, guid: 8af281491294e0247ba82e2bbbba0b2c, type: 2}
+  sandwichObj: {fileID: 1518815804011834, guid: 9d4dfab12365b9d418749828e7e8ff6e,
+    type: 2}
   ingredientReward:
   - {fileID: 1245420649105768, guid: 56b5659a295238347850953fcec9ffc1, type: 2}
   - {fileID: 1799772066054846, guid: 7b36901615498b64aafb535179b52e11, type: 2}
   - {fileID: 1010495391756072, guid: 60df6e117f4e43a448198627252776e6, type: 2}
   - {fileID: 1400218533703692, guid: 9eacbe2cb60994244854c75205da4379, type: 2}
+  money: 0
