@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.08.00">
+    <object class="AudioFile" id="{dd907b3c-8476-4bc1-aeeb-ec17657d3904}">
+        <property name="assetPath">
+            <value>MansayingHmm/02-401339__ckvoiceover__hmmmmm.mp3</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>0.78367346938775506</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{cfa32f15-54d4-4a77-a187-4052b086dff0}</destination>
+        </relationship>
+    </object>
+</objects>
