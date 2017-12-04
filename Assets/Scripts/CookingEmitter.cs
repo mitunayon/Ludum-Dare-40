@@ -14,15 +14,16 @@ public class CookingEmitter : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.transform.tag == "container")
+        if (other.transform.tag == "container")
         {
             print("Cooking Added");
-            CookingContainer cookCtrl = collision.transform.GetComponent<CookingContainer>();
+            CookingContainer cookCtrl = other.transform.GetComponent<CookingContainer>();
             
             cookCtrl.AddCookingProgress(cookRate);
         }
         
     }
+    
 }
