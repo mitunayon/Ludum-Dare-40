@@ -32,21 +32,24 @@ public class CookingContainer : MonoBehaviour {
         switch (collision.transform.tag)
         {
             case "ingredient":
-                //print("Added " + collision.collider.name.ToString());
-                FoodController foodCtrl = collision.collider.GetComponent<FoodController>();
-                ingredients.Add(foodCtrl.getType());
-                if (pickupCtrl.pickedup_object.tag == "ingredient")
+                if (ingredients.Count < 2)
                 {
-                    pickupCtrl.pickedup_object = null;
-                    pickupCtrl.pickedup_objectRb = null;
-                    pickupCtrl.pickedup = false;
-                    /*
-                    // set parent
-                    foodCtrl.transform.SetParent(gameObject.transform);
-                    collision
-                    */
+                    //print("Added " + collision.collider.name.ToString());
+                    FoodController foodCtrl = collision.collider.GetComponent<FoodController>();
+                    ingredients.Add(foodCtrl.getType());
+                    if (pickupCtrl.pickedup_object.tag == "ingredient")
+                    {
+                        pickupCtrl.pickedup_object = null;
+                        pickupCtrl.pickedup_objectRb = null;
+                        pickupCtrl.pickedup = false;
+                        /*
+                        // set parent
+                        foodCtrl.transform.SetParent(gameObject.transform);
+                        collision
+                        */
+                    }
+                    Destroy(collision.transform.gameObject); 
                 }
-                Destroy(collision.transform.gameObject);
                 break;
             //if pan touches the serving plate
             case "serving plate":
@@ -56,9 +59,11 @@ public class CookingContainer : MonoBehaviour {
                 {
                     if (ingredients.Contains("Meat") && ingredients.Contains("Bread")) {
                         Instantiate(gameCtrl.sandwichObj, transform.position, transform.rotation);
+                        ClearIngredients();
                     }
-                    Instantiate(gameCtrl.soupObj, transform.position, transform.rotation);
-                    ClearIngredients();
+
+                   // Instantiate(gameCtrl.soupObj, transform.position, transform.rotation);
+                    
                 }
                 break;
             
