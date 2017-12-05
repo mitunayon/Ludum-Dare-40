@@ -7,21 +7,17 @@ public class SpawnControl : MonoBehaviour {
     private int spawned = 0;
     [SerializeField]
     private float difficultyScale = 1f;
-    void Start()
-    {
+    void Start() {
         //InvokeRepeating("spawn", 2f, 10f/difficultyScale);
     }
-    public void spawn(int repeat)
-    {
-        for (int i = 0; i < repeat; i++)
-        {
+    public void spawn(int repeat) {
+        for (int i = 0; i < repeat; i++) {
             Instantiate(customer, transform.position, Quaternion.identity);
             spawned++;
         }
-        
+
     }
-    void Update()
-    {
+    void Update() {
 
     }
 }
