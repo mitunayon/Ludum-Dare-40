@@ -39,10 +39,10 @@ GameObject:
   - component: {fileID: 33165046505690064}
   - component: {fileID: 23667479247857976}
   - component: {fileID: 54684393983340920}
-  - component: {fileID: 64452868847811576}
   - component: {fileID: 114166993141658804}
   - component: {fileID: 114166870961499946}
   - component: {fileID: 208301746504626424}
+  - component: {fileID: 65162535775988454}
   m_Layer: 8
   m_Name: saucepan
   m_TagString: container
@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217693911455400}
   m_LocalRotation: {x: 0.04759561, y: 0.7055033, z: 0.705503, w: -0.047595568}
-  m_LocalPosition: {x: -13.855999, y: 2.95, z: -1.241}
+  m_LocalPosition: {x: -12.964, y: 3.13, z: 10.07}
   m_LocalScale: {x: 0.27242494, y: 0.27242494, z: 0.16639277}
   m_Children:
   - {fileID: 4714299431036792}
@@ -133,8 +133,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64452868847811576
-MeshCollider:
+--- !u!65 &65162535775988454
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -143,10 +143,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: d5849304a9770b049a6f3aba9fc2d4cc, type: 3}
+  m_Size: {x: 1.9796423, y: 3.6617794, z: 0.91395134}
+  m_Center: {x: -0.000000005285733, y: -0.8308896, z: 0.7445956}
 --- !u!114 &114166870961499946
 MonoBehaviour:
   m_ObjectHideFlags: 1
