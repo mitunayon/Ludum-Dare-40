@@ -94,6 +94,8 @@ public class CustomerController : MonoBehaviour {
                 target = GameObject.Find("portal");
                 agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
                 animator.SetBool("isWalking", true);
+
+                gameCtrl.customersFed++;
                 state = "leaving";
                 break;
             case "leaving":
@@ -118,7 +120,7 @@ public class CustomerController : MonoBehaviour {
             case "finished food":
                 if (isSeated)
                 {
-                    fullness += 50f;
+                    fullness += 100f;
                    
                     DropReward(Random.Range(1,4));
                     Destroy(other.gameObject);

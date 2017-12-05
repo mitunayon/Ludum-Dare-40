@@ -9,12 +9,16 @@ public class SpawnControl : MonoBehaviour {
     private float difficultyScale = 1f;
     void Start()
     {
-        InvokeRepeating("spawn", 2f, 10f/difficultyScale);
+        //InvokeRepeating("spawn", 2f, 10f/difficultyScale);
     }
-    public void spawn()
+    public void spawn(int repeat)
     {
-        Instantiate(customer, transform.position, Quaternion.identity);
-        spawned++;
+        for (int i = 0; i < repeat; i++)
+        {
+            Instantiate(customer, transform.position, Quaternion.identity);
+            spawned++;
+        }
+        
     }
     void Update()
     {

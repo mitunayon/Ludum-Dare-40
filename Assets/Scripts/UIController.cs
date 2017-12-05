@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
 
-    public Text MoneyUI;
+    public Text MoneyUI,waveUI;
     GameController gameCtrl;
 	// Use this for initialization
 	void Start () {
@@ -14,6 +14,18 @@ public class UIController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        MoneyUI.text = "Money: £"+gameCtrl.money.ToString();
+        waveUI.text = "Wave: "+gameCtrl.wave.ToString();
+        switch (gameCtrl.gameState)
+        {
+            case "waiting":
+                MoneyUI.text = "Press Enter to start game.";
+                break;
+            case "live":
+                MoneyUI.text = "Money: £" + gameCtrl.money.ToString();
+                break;
+            default:
+                break;
+        }
+        
 	}
 }
