@@ -18,10 +18,11 @@ public class CustomerController : MonoBehaviour {
     private Animator animator;
 
     private Rigidbody rb;
-
+    private float startTime;
     GameController gameCtrl;
     public string state;
-    private float leaveTimer = 30f;
+    public float countdown; 
+    public float leaveTimer = 30f;
     // Use this for initialization
     void Start() {
         gameObject.layer = 9;
@@ -35,7 +36,8 @@ public class CustomerController : MonoBehaviour {
         state = "looking for seat";
         gameCtrl = GameObject.Find("GameController").GetComponent<GameController>();
         leaveTimer = Random.Range(30f, 180f);
-        StartCoroutine("TimertoLeave");
+       
+        //StartCoroutine("TimertoLeave");
     }
 
     // Update is called once per frame
@@ -59,10 +61,14 @@ public class CustomerController : MonoBehaviour {
 
             case "going to seat":
                 animator.SetBool("isWalking", true);
-                if (isSeated == true) state = "waiting for food";
+                if (isSeated == true) state = "start waiting";
                 break;
-
+            case "start waiting":
+                startTime = Time.time;
+                state = "waiting for food";
+                break;
             case "waiting for food":
+                Debug.Log("waiting for food");
                 gameObject.layer = 0;
                 animator.SetBool("isWalking", false);
                 animator.SetTrigger("isSitting");
@@ -106,7 +112,11 @@ public class CustomerController : MonoBehaviour {
                 state = "leaving";
                 break;
         }
-
+        countdown = Time.time - startTime;
+        if (countdown > leaveTimer) {
+            state = "angry";
+            Debug.Log("I am angry");
+        }
     }
 
 
@@ -162,9 +172,9 @@ public class CustomerController : MonoBehaviour {
 
         }
     }
-    private IEnumerator TimertoLeave() {
+   /* public IEnumerator TimertoLeave() {
         yield return new WaitForSeconds(leaveTimer);
         state = "angry";
-    }
+    }*/
 
 }
