@@ -18,7 +18,7 @@ public class OverheadHealthbarController : MonoBehaviour {
                 if (hpPerc < 0f) hpPerc = 0f;
                 //divides maximum progress by amount of sprite images
                 float indexDivider = maxProgress / (healthbarSprites.Length - 1);
-                //what is 2.5 arbitary number
+                //rounds down
                 int spriteIndex = Mathf.FloorToInt((hpPerc) / indexDivider);
                 //print("spriteIndex " + spriteIndex);
                 rend.sprite = healthbarSprites[spriteIndex];

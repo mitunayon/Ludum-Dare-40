@@ -13,11 +13,16 @@ public class SpawnControl : MonoBehaviour {
     public void spawn(int repeat) {
         for (int i = 0; i < repeat; i++) {
             Instantiate(customer, transform.position, Quaternion.identity);
+            StartCoroutine("Timer");
             spawned++;
         }
 
     }
     void Update() {
 
+    }
+
+    public IEnumerator Timer() {
+        yield return new WaitForSeconds(2);
     }
 }

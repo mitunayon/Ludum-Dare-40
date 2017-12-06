@@ -45,7 +45,7 @@ public class CookingContainer : MonoBehaviour {
                 break;
             //if pan touches the serving plate
             case "serving plate":
-                print("served");
+
                 //if the food is fully cooked and ingredients are more than 0
                 if (isCooked && ingredients.Count > 0) {
                     if (ingredients.Contains("Meat")) {
