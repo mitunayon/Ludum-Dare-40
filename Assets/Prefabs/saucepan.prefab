@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4714299431036792}
   - component: {fileID: 212127005360438678}
-  - component: {fileID: 114804955666028528}
+  - component: {fileID: 114704694188359896}
   m_Layer: 8
   m_Name: progress bar
   m_TagString: Untagged
@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217693911455400}
   m_LocalRotation: {x: 0.04759561, y: 0.7055033, z: 0.705503, w: -0.047595568}
-  m_LocalPosition: {x: -12.964, y: 3.13, z: 10.07}
+  m_LocalPosition: {x: -9.49, y: 3.182, z: 4.177}
   m_LocalScale: {x: 0.27242494, y: 0.27242494, z: 0.16639277}
   m_Children:
   - {fileID: 4714299431036792}
@@ -182,7 +182,7 @@ MonoBehaviour:
   ingredients: []
   isCooked: 0
   cookRate: 0.5
---- !u!114 &114804955666028528
+--- !u!114 &114704694188359896
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1166058726395886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71acc2d933460464792b60da51a797ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 29b0bbe28476bd44ebadc5225b404822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthbarSprites:
