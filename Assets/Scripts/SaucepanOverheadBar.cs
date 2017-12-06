@@ -12,6 +12,6 @@ public class SaucepanOverheadBar : OverheadHealthbarController {
 	
 	// Update is called once per frame
 	void Update () {
-        ChangeSprite((float) objCtrl.progress);
+        ChangeSprite((float) objCtrl.progress, 100f);
 	}
 }

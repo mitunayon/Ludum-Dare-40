@@ -20,10 +20,6 @@ public class CookingContainer : MonoBehaviour {
         gameCtrl = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
-    // Update is called once per frame
-    void Update() {
-
-    }
 
     void OnCollisionEnter(Collision collision) {
 
@@ -104,10 +100,6 @@ public class CookingContainer : MonoBehaviour {
                             break;
                         }
                     }
-
-
-
-
                 }
                 break;
 

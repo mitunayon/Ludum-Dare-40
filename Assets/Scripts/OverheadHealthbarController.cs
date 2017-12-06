@@ -7,14 +7,15 @@ public class OverheadHealthbarController : MonoBehaviour {
     public Sprite[] healthbarSprites;
     private GameController gameCtrl;
 
-    protected void ChangeSprite(float progress) {
+    protected void ChangeSprite(float progress, float maxProgress) {
         switch (gameCtrl.gameState) {
 
             case "live":
-                float hpPerc = (progress / 100f) * 100f;
-                if (hpPerc > 100) hpPerc = 100f;
+                float hpPerc = (progress / maxProgress) * maxProgress;
+                if (hpPerc > maxProgress) hpPerc = maxProgress;
 
-                float indexDivider = 100 / (healthbarSprites.Length - 1);
+                float indexDivider = maxProgress / (healthbarSprites.Length - 1);
+                //what is 2.5 arbitary number
                 int spriteIndex = (int)((hpPerc + 2.5f) / indexDivider);
                 //print("spriteIndex " + spriteIndex);
                 rend.sprite = healthbarSprites[spriteIndex];
