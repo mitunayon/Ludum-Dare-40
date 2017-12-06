@@ -88,15 +88,15 @@ public class PickupController : MonoBehaviour {
 
     private void ShootItem(Rigidbody pickupRb) {
         if (Input.GetMouseButtonDown(1)) {
-            startTime = Time.fixedTime;
+            startTime = Time.time;
         }
 
         if (Input.GetMouseButton(1)) {
-            chargeUpTime = Mathf.Clamp(Time.fixedTime - startTime, 0, 1);
+            chargeUpTime = Mathf.Clamp(Time.time - startTime, 0, 1);
             //chargeUI.value = chargeUpTime;
         }
         if (Input.GetMouseButtonUp(1)) {
-            durationTime = Mathf.Clamp(Time.fixedTime - startTime, 0, 1);
+            durationTime = Mathf.Clamp(Time.time - startTime, 0, 1);
             pickedup = false;
             pickupRb.useGravity = true;
             pickupRb.AddForce(transform.forward * throwStrength * durationTime);
