@@ -29,7 +29,7 @@ public class Aiming : MonoBehaviour {
     
 
 	void Start()
-	{	Cursor.lockState = CursorLockMode.Locked;
+	{	
        
         gameCtrl = GameObject.Find("GameController").GetComponent<GameController>(); 
         
@@ -37,6 +37,7 @@ public class Aiming : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         //stops turning when rotation of objects
         if (!Input.GetMouseButton(2) && !Input.GetKey(KeyCode.Q))
         {
