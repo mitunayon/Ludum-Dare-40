@@ -4848,7 +4848,7 @@ MonoBehaviour:
   fullness: 0
   target: {fileID: 0}
   maxWaitTime: 30
-  minWaitTime: 60
+  minWaitTime: 200
   state: looking for seat
   countdown: 0
   leaveTimer: 0
