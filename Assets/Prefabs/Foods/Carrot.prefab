@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54529717777499354}
   - component: {fileID: 64898492240727864}
   - component: {fileID: 114135289783299882}
+  - component: {fileID: 114662796300919586}
   m_Layer: 8
   m_Name: Carrot
   m_TagString: ingredient
@@ -127,3 +128,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: cheese
+--- !u!114 &114662796300919586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010495391756072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b02fc2924a9d042be0c9efa80c418f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Vegetable

@@ -127,4 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b02fc2924a9d042be0c9efa80c418f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: raw_ingredient
+  type: Meat
