@@ -69,9 +69,13 @@ public class CustomerController : MonoBehaviour {
                 state = "waiting for food";
                 break;
             case "waiting for food":
-                Debug.Log("waiting for food");
+
                 gameObject.layer = 0;
                 animator.SetBool("isWalking", false);
+                countdown = Time.time - startTime;
+                if (countdown > leaveTimer) {
+                    state = "angry";
+                }
                 animator.SetTrigger("isSitting");
                 if (fullness >= 100) state = "start leaving";
                 break;
@@ -114,10 +118,8 @@ public class CustomerController : MonoBehaviour {
                 state = "leaving";
                 break;
         }
-        countdown = Time.time - startTime;
-        if (countdown > leaveTimer) {
-            state = "angry";
-        }
+
+        
     }
 
 

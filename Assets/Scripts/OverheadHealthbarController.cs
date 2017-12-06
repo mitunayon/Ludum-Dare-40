@@ -3,7 +3,6 @@ using System.Collections;
 
 public class OverheadHealthbarController : MonoBehaviour {
     private SpriteRenderer rend;
-
     public Sprite[] healthbarSprites;
     private GameController gameCtrl;
 
@@ -11,12 +10,16 @@ public class OverheadHealthbarController : MonoBehaviour {
         switch (gameCtrl.gameState) {
 
             case "live":
+                //percentage
                 float hpPerc = (progress / maxProgress) * maxProgress;
-                if (hpPerc > maxProgress) hpPerc = maxProgress;
-
+                //limit max progress
+                if (hpPerc > 100f) hpPerc = 100f;
+                //limit min progress
+                if (hpPerc < 0f) hpPerc = 0f;
+                //divides maximum progress by amount of sprite images
                 float indexDivider = maxProgress / (healthbarSprites.Length - 1);
                 //what is 2.5 arbitary number
-                int spriteIndex = (int)((hpPerc + 2.5f) / indexDivider);
+                int spriteIndex = Mathf.FloorToInt((hpPerc) / indexDivider);
                 //print("spriteIndex " + spriteIndex);
                 rend.sprite = healthbarSprites[spriteIndex];
 
