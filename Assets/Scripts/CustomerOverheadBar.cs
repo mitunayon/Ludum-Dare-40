@@ -13,5 +13,6 @@ public class CustomerOverheadBar : OverheadHealthbarController {
     // Update is called once per frame
     void Update() {
         ChangeSprite((float)objCtrl.countdown, (float)objCtrl.leaveTimer);
+        transform.LookAt(Camera.main.transform.position, Vector3.up);
     }
 }
