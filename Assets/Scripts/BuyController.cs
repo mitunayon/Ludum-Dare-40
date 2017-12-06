@@ -7,6 +7,7 @@ public class BuyController : MonoBehaviour {
     public GameObject foodToSpawn;
     public float distanceFromButton;
     public GameController gameController;
+    public int cost;
     // Use this for initialization
     void Start() {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
@@ -15,10 +16,10 @@ public class BuyController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (pressed && gameController.money >= 6) {
+        if (pressed && gameController.money >= cost) {
             SpawnFood(foodToSpawn);
             pressed = false;
-            gameController.money -= 5;
+            gameController.money -= cost;
         }
     }
     void SpawnFood(GameObject foodToSpawn) {
