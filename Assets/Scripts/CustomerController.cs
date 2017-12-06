@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class CustomerController : MonoBehaviour {
-    public bool isHungry = true;
     public bool isSeated = false;
     public GameObject money;
     [SerializeField]
@@ -16,13 +15,15 @@ public class CustomerController : MonoBehaviour {
     // private Renderer rend;
     private Collider coll;
     private Animator animator;
-
+    public float maxWaitTime;
+    public float minWaitTime;
     private Rigidbody rb;
     private float startTime;
     GameController gameCtrl;
     public string state;
     public float countdown; 
     public float leaveTimer = 30f;
+
     // Use this for initialization
     void Start() {
         gameObject.layer = 9;
@@ -35,7 +36,7 @@ public class CustomerController : MonoBehaviour {
         animator.SetBool("isSitting", false);
         state = "looking for seat";
         gameCtrl = GameObject.Find("GameController").GetComponent<GameController>();
-        leaveTimer = Random.Range(30f, 180f);
+        leaveTimer = Random.Range(minWaitTime, maxWaitTime);
        
         //StartCoroutine("TimertoLeave");
     }
@@ -109,13 +110,13 @@ public class CustomerController : MonoBehaviour {
                 target = GameObject.Find("portal");
                 agent.SetDestination(new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z));
                 animator.SetBool("isWalking", true);
+                gameCtrl.angryCustomers += 1;
                 state = "leaving";
                 break;
         }
         countdown = Time.time - startTime;
         if (countdown > leaveTimer) {
             state = "angry";
-            Debug.Log("I am angry");
         }
     }
 

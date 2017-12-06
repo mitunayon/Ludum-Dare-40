@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour {
     public GameObject[] ingredientReward;
     public GameObject player;
     SpawnControl custSpawner;
-
+    public int angryCustomers = 0;
     public int money = 20;
     public int wave = 0;
     float time = 0f;

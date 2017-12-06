@@ -15,7 +15,7 @@ public class BuyController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (pressed && gameController.money > 6) {
+        if (pressed && gameController.money >= 6) {
             SpawnFood(foodToSpawn);
             pressed = false;
             gameController.money -= 5;

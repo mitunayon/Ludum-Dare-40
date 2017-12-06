@@ -4843,14 +4843,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a23dab9f1064b47af86aafd2b2186e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHungry: 1
   isSeated: 0
   money: {fileID: 1041535253383718, guid: 53b76f86af4b2a449937109237edf19d, type: 2}
   fullness: 0
   target: {fileID: 0}
+  maxWaitTime: 30
+  minWaitTime: 60
   state: looking for seat
   countdown: 0
-  leaveTimer: 30
+  leaveTimer: 0
 --- !u!114 &114583186279098830
 MonoBehaviour:
   m_ObjectHideFlags: 1

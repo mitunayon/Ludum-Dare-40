@@ -116,6 +116,7 @@ public class PickupController : MonoBehaviour {
             pickup.transform.Rotate(cam.forward, -Mathf.Deg2Rad * Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed, Space.World);
         }
     }
+
     private void ButtonPress() {
         //press e to buy food
         if (Input.GetKeyDown(KeyCode.E)) {
